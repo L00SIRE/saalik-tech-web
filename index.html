@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>SAALIK - Discover Nepal's Heritage</title>
+    <meta name="description" content="SAALIK - A cultural tourism and heritage platform dedicated to preserving, promoting, and showcasing Nepal's statues and sculptures/culture.">
+    <meta name="keywords" content="Nepal, heritage, culture, tourism, statues, sculptures, SAALIK, digital heritage">
+    <meta name="theme-color" content="#00bf63">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SAALIK">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="saalikicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="saalikicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+    <body>
+  <header class="navbar">
+        <div class="logo">
+            <img src="saalikicon.png" alt="Saalik Logo">
+            <span>SAALIK</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="#">STORIES</a>
+            <a href="#">GUIDE BOOKING</a>
+            <button class="buttoncontact" onclick="openContactModal()">CONTACT</button>
+        </nav>
+
+        <div class="contact-modal" id="contactModal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-container">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Contact Information</h2>
+                        <button class="modal-close" onclick="closeContactModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="contact-section">
+                            <div class="contact-item">
+                                <span class="contact-label">EMAIL</span>
+                                <span class="contact-value">saalik130@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">PHONE</span>
+                                <span class="contact-value">+977-9840836892</span>
+                            </div>
+                        </div>
+                        <div class="social-section">
+                            <h3>Connect With Us</h3>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/share/1DFMvc9acF/" class="social-link">
+                                    <span class="social-platform">Facebook</span>
+                                    <span class="social-handle">/saalik</span>
+                                </a>
+                                <a href="https://youtube.com/@saalik0" class="social-link">
+                                    <span class="social-platform">YouTube</span>
+                                    <span class="social-handle">/saalik0</span>
+                                </a>
+                                <a href="https://www.instagram.com/saalik0?igsh=MTJvM3pmZHJpbGdjMA==" class="social-link">
+                                    <span class="social-platform">Instagram</span>
+                                    <span class="social-handle">/saalik0</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMobileNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-mobile" onclick="toggleMobileNav()">&times;</div>
+        <a href="#" onclick="toggleMobileNav()">HOME</a>
+        <a href="#" onclick="toggleMobileNav()">STORIES</a>
+        <a href="#" onclick="toggleMobileNav()">GUIDE BOOKING</a>
+        <button class="buttoncontact" onclick="openContactModal(); toggleMobileNav()">CONTACT</button>
+    </div>
+
+
+    <!-- Image Slider Section -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <img src="bhairabbanner.png" alt="Bhairab Banner" />
+                </div>
+                <div class="slide">
+                    <img src="swayambhubanner.png" alt="Swayambhu Banner" />
+                </div>
+                <div class="slide">
+                    <img src="kalibanner.png" alt="Kali Banner" />
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="slider-nav prev" onclick="changeSlide(-1)">
+                <span>&#10094;</span>
+            </button>
+            <button class="slider-nav next" onclick="changeSlide(1)">
+                <span>&#10095;</span>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is SAALIK Section -->
+    <div class="content-section">
+        <div class="section-wrapper">
+            <div class="section-image">
+                <img src="natrajan.png" alt="Natrajan" />
+            </div>
+            <div class="section-content">
+                <div class="section-heading">
+                    <span class="primary">WHAT IS </span><span class="accent">SAALIK?</span>
+                </div>
+                <p class="section-desc">
+                    <span class="saalik-highlight">SAALIK</span> is a cultural tourism and heritage platform dedicated to <span class="saalik-highlight">preserving,</span> promoting, and showcasing <span class="saalik-highlight">Nepal's statues and sculptures/culture.</span> By blending technology with tradition, we provide travelers, researchers, and culture enthusiasts with an <span class="saalik-highlight">authentic digital experience.</span> Our mission is to centralize and <span class="saalik-highlight">digitalize information</span> on Nepal's cultural heritage, making it accessible worldwide. We envision becoming the leading platform for digital heritage tourism and <span class="saalik-highlight">cultural preservation</span> in Nepal, bridging the gap between history and innovation. With features such as <span class="saalik-highlight">AI based statue recognition,</span> a verified <span class="saalik-highlight">guide booking system,</span> personalized <span class="saalik-highlight">travel itineraries</span> and <span class="saalik-highlight">emergency help support,</span> SAALIK is committed to safeguarding Nepal's timeless legacy while empowering travelers and local communities alike.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Untold Stories Section -->
+    <div class="content-section">
+        <div class="section-wrapper reverse">
+            <div class="section-image">
+                <img src="untold.png" alt="Untold" />
+            </div>
+            <div class="section-content">
+                <div class="section-heading">
+                    <span class="accent">UNTOLD </span>
+                    <span class="primary">STORIES</span>
+                </div>
+                <p class="section-desc">
+                    Browse through <span class="saalik-highlight">SAALIK's</span> ever growing <span class="saalik-highlight">database of statues</span> and <span class="saalik-highlight">sculptures</span> from across Nepal, where each piece carries <span class="saalik-highlight">a story of kings, gods, artisans, and civilizations.</span> More than just stone and metal, these statues embody centuries of history, faith, and craftsmanship inviting you to <span class="saalik-highlight">explore the cultural heartbeat of Nepal.</span>
+                </p>
+                <a href="#" class="section-btn">LAUNCHING SOON</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Booking Section -->
+    <div class="content-section">
+        <div class="section-wrapper">
+            <div class="section-image">
+                <img src="guide.png" alt="guide" />
+            </div>
+            <div class="section-content">
+                <div class="section-heading">
+                    <span class="accent">GUIDE </span>
+                    <span class="primary">BOOKING</span>
+                </div>
+                <p class="section-desc">
+                    Discover Nepal with confidence by <span class="saalik-highlight">booking verified local guides</span> through SAALIK. Our <span class="saalik-highlight">trusted guides</span> bring culture, history, and spirituality to life while ensuring your journey is both <span class="saalik-highlight">safe and insightful.</span> With expertise ranging from heritage walks to temple tours, they help you <span class="saalik-highlight">experience Nepal beyond the surface.</span>
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegMKcl6OcYZ4KhhnvSVkSogWO30qeykP8VYPWP-_JUaTCHQQ/viewform?usp=dialog" class="section-btn">JOIN WAITLIST</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="collaboration-footer">
+        <h1>
+            IN <span class="collab-highlight">COLLABORATION</span> WITH
+        </h1>
+        <div class="collab-logos">
+            <div class="logo-block">
+                <img src="government.png" alt="Department of Archaeology">
+                <p>Department of Archaeology</p>
+            </div>
+            <div class="logo-block">
+                <img src="government1.png" alt="National Archives">
+                <p>National Archives</p>
+            </div>
+            <div class="logo-block">
+                <img src="kageshwori.png" alt="Kageshowori Manohara Municipality">
+                <p>Kageshowori Manohara<br>Municipality</p>
+            </div>
+            <div class="logo-block">
+                <img src="tokha.png" alt="Tokha Municipality">
+                <p>Tokha Municipality</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="saalik-group-container">
+        <div class="saalik-group-row">
+            <div class="saalik-group-title">
+                <span class="green">SAALIK</span> <span class="white">GROUP:</span>
+            </div>
+            <div class="logo-item">
+                <img src="saaliklogo.png" alt="Saalik Logo">
+            </div>
+            <div class="logo-item">
+                <img src="designslogo.png" alt="Saalik Designs Logo">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-section footer-logo">
+            <img src="saaliklogo.png" alt="Saalik Logo">
+            <p>Delivering innovative technology solutions with excellence and integrity.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#">Guide Booking</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Team</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1DFMvc9acF/">Facebook /saalik</a>
+                <a href="https://youtube.com/@saalik0">YouTube /saalik0</a>
+                <a href="https://www.instagram.com/saalik0?igsh=MTJvM3pmZHJpbGdjMA==">Instagram /saalik0</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        © 2025 SAALIK TECH PVT. LTD. All rights reserved. 
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+
+    </body>
+
+</html>
