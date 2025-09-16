@@ -1770,10 +1770,23 @@ a:focus {
   }
 }
 
-/* Dark mode support */
+/* Force dark theme regardless of system preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: #070b09;
+  }
+  
+  body {
+    background:
+      linear-gradient(rgba(7, 11, 9, 0.85), rgba(7, 11, 9, 0.85)),
+      url('bgsaalik.jpg') center/cover no-repeat fixed;
+  }
+}
+
+/* Dark mode support - maintain dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-dark: #000000;
+    --bg-dark: #070b09;
   }
 }
 
