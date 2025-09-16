@@ -347,7 +347,6 @@ h6 {
 
 /* Slider Section */
 .slider-section {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
