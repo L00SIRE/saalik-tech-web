@@ -42,12 +42,12 @@ const OurInitiative = () => {
       <div className="initiative-container">
         <div className="initiative-header">
           <h2 className="initiative-title">
-            <span className="accent">OUR </span>
-            <span className="primary">INITIATIVE</span>
+            <span className="primary">OUR </span>
+            <span className="accent">INITIATIVES</span>
           </h2>
-          <p className="initiative-subtitle">
+          {/* <p className="initiative-subtitle">
             Our mission is to preserve, promote, and showcase Nepal's cultural heritage through innovative technology and community engagement.
-          </p>
+          </p> */}
         </div>
 
         <div className="initiative-slider-wrapper">
@@ -73,7 +73,7 @@ const OurInitiative = () => {
           </button>
 
           {/* Dots Indicator */}
-          <div className="initiative-slider-dots">
+          {/* <div className="initiative-slider-dots">
             {logos.map((_, index) => (
               <span 
                 key={index}
@@ -81,7 +81,7 @@ const OurInitiative = () => {
                 onClick={() => goToSlide(index)}
               ></span>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -213,11 +213,11 @@ const GuideBooking = () => {
                 </div>
 
                 <button type="submit" className="booking-submit-btn">
-                  Submit Booking Request
+                  Launching Soon
                 </button>
 
                 <p className="form-note">
-                  * Required fields. We'll contact you within 24 hours to confirm your booking.
+                  * Will be available soon.
                 </p>
               </form>
             )}

@@ -1,58 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
 const Stories = () => {
-  const stories = [
-    {
-      id: 1,
-      title: "The Tale of Natrajan",
-      location: "Kathmandu Valley",
-      image: "/natrajan.png",
-      description: "Discover the ancient story of Natrajan, a masterpiece of Nepalese sculpture that has stood the test of time. This magnificent statue represents centuries of artistic tradition and spiritual devotion.",
-      date: "2024"
-    },
-    {
-      id: 2,
-      title: "Swayambhu: The Self-Arisen",
-      location: "Swayambhunath Stupa",
-      image: "/swayambhubanner.png",
-      description: "Explore the legend of Swayambhunath, one of the most sacred Buddhist sites in Nepal. The stupa's history dates back over 2,000 years, making it a symbol of Nepal's rich spiritual heritage.",
-      date: "2024"
-    },
-    {
-      id: 3,
-      title: "Bhairab: The Fierce Protector",
-      location: "Various Temples",
-      image: "/bhairabbanner.png",
-      description: "Learn about Bhairab, the fierce manifestation of Lord Shiva, who protects devotees and maintains cosmic order. These powerful statues are found throughout Nepal's sacred sites.",
-      date: "2024"
-    },
-    {
-      id: 4,
-      title: "Kali: The Divine Mother",
-      location: "Kali Temples",
-      image: "/kalibanner.png",
-      description: "Uncover the stories behind the worship of Goddess Kali in Nepal. These statues represent the divine feminine power and the cycle of creation and destruction.",
-      date: "2024"
-    },
-    {
-      id: 5,
-      title: "Kageshwori: The Crow Goddess",
-      location: "Kageshwori Temple",
-      image: "/kageshwori.png",
-      description: "Discover the unique temple of Kageshwori, where the goddess is worshipped in the form of crows. This ancient site holds deep cultural significance for the local community.",
-      date: "2024"
-    },
-    {
-      id: 6,
-      title: "Tokha Heritage",
-      location: "Tokha",
-      image: "/tokha.png",
-      description: "Explore the rich heritage of Tokha, a traditional Newari settlement that preserves ancient architectural and cultural traditions. The statues here tell stories of community and devotion.",
-      date: "2024"
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchStories();
+  }, []);
+
+  const fetchStories = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${API_URL}/stories`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch stories');
+      }
+      const data = await response.json();
+      setStories(data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching stories:', err);
+      setError(err.message);
+      // Fallback to empty array if API is not available
+      setStories([]);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
   return (
     <div className="stories-page">
@@ -66,24 +45,42 @@ const Stories = () => {
       </div>
 
       <div className="stories-container">
-        <div className="stories-grid">
-          {stories.map((story) => (
-            <div key={story.id} className="story-card">
-              <div className="story-image">
-                <img src={story.image} alt={story.title} />
-              </div>
-              <div className="story-content">
-                <div className="story-meta">
-                  <span className="story-location">{story.location}</span>
-                  <span className="story-date">{story.date}</span>
+        {loading ? (
+          <div className="loading-stories">
+            <p>Loading stories...</p>
+          </div>
+        ) : error ? (
+          <div className="error-stories">
+            <p>Unable to load stories. {error}</p>
+            <p className="error-hint">Make sure the backend server is running on port 5000</p>
+          </div>
+        ) : stories.length === 0 ? (
+          <div className="no-stories">
+            <p>No stories available at the moment.</p>
+          </div>
+        ) : (
+          <div className="stories-grid">
+            {stories.map((story) => (
+              <div key={story._id} className="story-card">
+                <div className="story-image">
+                  <img 
+                    src={story.image.startsWith('http') ? story.image : `http://localhost:5000${story.image}`} 
+                    alt={story.title} 
+                  />
                 </div>
-                <h3 className="story-title">{story.title}</h3>
-                <p className="story-description">{story.description}</p>
-                <button className="story-read-more">Read More</button>
+                <div className="story-content">
+                  <div className="story-meta">
+                    <span className="story-location">{story.location}</span>
+                    <span className="story-date">{story.date}</span>
+                  </div>
+                  <h3 className="story-title">{story.title}</h3>
+                  <p className="story-description">{story.description}</p>
+                  <button className="story-read-more">Read More</button>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <Footer />

@@ -62,9 +62,9 @@ const WorksDoneSlider = () => {
         <div className="works-done-header">
           <h2 className="works-done-title">
             <span className="primary">OUR </span>
-            <span className="accent">WORKS</span>
+            <span className="accent">FEATURES</span>
           </h2>
-          <p className="works-done-subtitle">Discover what we've accomplished in preserving Nepal's cultural heritage</p>
+          {/* <p className="works-done-subtitle">Discover what we've accomplished in preserving Nepal's cultural heritage</p> */}
         </div>
 
         <div className="works-slider-wrapper">
@@ -87,16 +87,16 @@ const WorksDoneSlider = () => {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows
           <button className="works-slider-nav prev" onClick={() => changeSlide(-1)}>
             <span>&#10094;</span>
           </button>
           <button className="works-slider-nav next" onClick={() => changeSlide(1)}>
             <span>&#10095;</span>
-          </button>
+          </button> */}
 
           {/* Dots Indicator */}
-          <div className="works-slider-dots">
+          {/* <div className="works-slider-dots">
             {works.map((_, index) => (
               <span 
                 key={index}
@@ -104,7 +104,7 @@ const WorksDoneSlider = () => {
                 onClick={() => goToSlide(index)}
               ></span>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
