@@ -1,6 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const handleContactClick = () => {
+    const contactButton = document.querySelector('.buttoncontact');
+    if (contactButton) {
+      contactButton.click();
+    }
+  };
+
   return (
     <>
       <footer>
@@ -12,12 +20,20 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Stories</a></li>
-            <li><a href="#">Guide Booking</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/stories">Stories</Link></li>
+            <li><Link to="/guide-booking">Guide Booking</Link></li>
+            <li><button className="footer-link-button" onClick={handleContactClick}>Contact</button></li>
           </ul>
         </div>
+
+        {/* <div className="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Team</a></li>
+          </ul>
+        </div> */}
 
         <div className="footer-section">
           <h4>Connect With Us</h4>
@@ -31,7 +47,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         © 2025 SAALIK TECH PVT. LTD. All rights reserved. 
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a>
       </div>
     </>
   );

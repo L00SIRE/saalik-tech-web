@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import ContactModal from './ContactModal';
 
 const Navbar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen);
@@ -26,18 +28,30 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleNavClick = () => {
+    setMobileNavOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <>
       <header className="navbar">
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src="/saalikicon.png" alt="Saalik Logo" align="left" height="40px" width="40px"/>
           <span align="center" style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--primary-green)', letterSpacing: '1px', paddingTop: '5px' }}>SAALIK</span>
-        </div>
+        </Link>
 
         <nav className="nav-links">
-          <a href="#" className="active">HOME</a>
-          <a href="#">STORIES</a>
-          <a href="#">GUIDE BOOKING</a>
+          <Link to="/" className={isActive('/') && location.pathname === '/' ? 'active' : ''}>HOME</Link>
+          <Link to="/stories" className={isActive('/stories') ? 'active' : ''}>STORIES</Link>
+          <Link to="/guide-booking" className={isActive('/guide-booking') ? 'active' : ''}>GUIDE BOOKING</Link>
           <button className="buttoncontact" onClick={openContactModal}>CONTACT</button>
         </nav>
 
@@ -51,9 +65,9 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div className={`mobile-nav ${mobileNavOpen ? 'active' : ''}`} id="mobileNav">
         <div className="close-mobile" onClick={toggleMobileNav}>&times;</div>
-        <a href="#" onClick={toggleMobileNav}>HOME</a>
-        <a href="#" onClick={toggleMobileNav}>STORIES</a>
-        <a href="#" onClick={toggleMobileNav}>GUIDE BOOKING</a>
+        <Link to="/" onClick={handleNavClick}>HOME</Link>
+        <Link to="/stories" onClick={handleNavClick}>STORIES</Link>
+        <Link to="/guide-booking" onClick={handleNavClick}>GUIDE BOOKING</Link>
         <button className="buttoncontact" onClick={() => { openContactModal(); toggleMobileNav(); }}>CONTACT</button>
       </div>
 
