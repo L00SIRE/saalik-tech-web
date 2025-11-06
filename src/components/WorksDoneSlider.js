@@ -42,20 +42,6 @@ const WorksDoneSlider = () => {
     return () => clearInterval(autoPlayInterval);
   }, [totalSlides]);
 
-  const changeSlide = (direction) => {
-    setCurrentSlideIndex((prev) => {
-      if (direction === 1) {
-        return (prev + 1) % totalSlides;
-      } else {
-        return prev === 0 ? totalSlides - 1 : prev - 1;
-      }
-    });
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlideIndex(index);
-  };
-
   return (
     <div className="works-done-section">
       <div className="works-done-container">
