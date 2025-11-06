@@ -29,7 +29,7 @@ body {
   color: var(--text-light);
   background:
     linear-gradient(rgba(7, 11, 9, 0.85), rgba(7, 11, 9, 0.85)),
-    url('bgsaalik.jpg') center/cover no-repeat fixed;
+    url('/bgsaalik.jpg') center/cover no-repeat fixed;
   background-attachment: fixed;
   overflow-x: hidden;
   padding-top: 80px;
@@ -120,7 +120,8 @@ ul li a,
   font-weight: 700;
   color: var(--primary-green);
   letter-spacing: 1px;
-  text-shadow: 0 0 15px rgba(0, 191, 99, 0.6), 0 0 30px rgba(0, 191, 99, 0.4);
+  object-fit: fill;
+  object-position: center; 
 }
 
 .nav-links {
@@ -269,8 +270,8 @@ ul li a,
   font-size: 1.1rem;
 }
 
-/* Hero Section */
-
+/* Hero Section - UNUSED: No hero section in current design */
+/* 
 .hero-content {
   flex: 1;
   max-width: 600px;
@@ -365,6 +366,7 @@ ul li a,
 .hero-image img:hover {
   transform: scale(1.02);
 }
+*/
 
 /* Slider Section */
 .slider-section {
@@ -385,6 +387,25 @@ ul li a,
   backdrop-filter: blur(1px);
 }
 
+/* Saalik Icon - Top Left of Slider */
+.slider-top-left-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  z-index: 100;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 191, 99, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+.slider-top-left-icon:hover {
+  transform: scale(1.1);
+}
 
 .slider-container {
   width: 100%;
@@ -541,6 +562,11 @@ ul li a,
   position: relative;
 }
 
+/* Left align for natraj section */
+.content-section:first-of-type .section-image {
+  text-align: left;
+}
+
 .section-image img {
   max-width: 100%;
   height: auto;
@@ -552,17 +578,21 @@ ul li a,
 }
 
 /* Specific styles for natarajan.png */
+.section-image img[src="/natrajan.png"],
 .section-image img[src="natrajan.png"] {
   flex: 1;
-  object-fit: fill;
-  max-width: 120%; /* Responsive width */
+  object-fit: contain;
+  max-width: 150%; /* Responsive width - increased for larger size */
   height: auto;
-  max-height: 900px; /* Responsive height */
+  max-height: 1800px; /* Responsive height - increased for larger size */
   border-radius: 20px;
   box-shadow: 0 15px 40px var(--shadow-dark);
   transition: transform 0.3s ease;
+  display: block;
+  margin-left: -200px;
 }
 
+.section-image img[src="/natrajan.png"]:hover,
 .section-image img[src="natrajan.png"]:hover {
   transform: scale(1.02); /* Hover effect */
 }
@@ -639,6 +669,409 @@ ul li a,
   border-color: var(--primary-green);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px var(--shadow-green);
+}
+
+/* Our Initiative Section */
+.initiative-section {
+  padding: 6rem 3rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 191, 99, 0.2);
+  box-shadow: 0 0 50px rgba(0, 191, 99, 0.1);
+}
+
+.initiative-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.initiative-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.initiative-title {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.initiative-title .primary {
+  color: var(--text-white);
+}
+
+.initiative-title .accent {
+  color: var(--primary-green);
+  text-shadow: 0 0 20px rgba(0, 191, 99, 0.5);
+}
+
+.initiative-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Initiative Logo Slider */
+.initiative-slider-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+
+.initiative-slider-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initiative-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.initiative-slide.active {
+  opacity: 1;
+}
+
+.initiative-logo-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: transparent;
+}
+
+.initiative-logo-item {
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: transparent;
+}
+
+.initiative-logo-item img {
+  background: black !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
+  
+}
+
+.initiative-logo-item:hover img {
+  transform: scale(1.05);
+}
+
+.initiative-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.initiative-slider-nav:hover {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 191, 99, 0.4);
+}
+
+.initiative-slider-nav.prev {
+  left: 30px;
+}
+
+.initiative-slider-nav.next {
+  right: 30px;
+}
+
+.initiative-slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.initiative-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.initiative-dot.active {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 191, 99, 0.5);
+}
+
+.initiative-dot:hover {
+  background: var(--text-white);
+  border-color: var(--text-white);
+  transform: scale(1.2);
+}
+
+/* Works Done Slider Section */
+.works-done-section {
+  padding: 6rem 3rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 191, 99, 0.3);
+  box-shadow: 0 0 60px rgba(0, 191, 99, 0.15);
+}
+
+.works-done-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.works-done-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.works-done-title {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  font-family: 'League Spartan', 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.works-done-title .primary {
+  color: var(--text-white);
+}
+
+.works-done-title .accent {
+  color: var(--primary-green);
+  text-shadow: 0 0 20px rgba(0, 191, 99, 0.5);
+}
+
+.works-done-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.works-slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.works-slider-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.works-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works-slide.active {
+  opacity: 1;
+}
+
+.works-slide-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .works-slide-content {
+    text-align: center;
+  }
+}
+
+.works-slide-image {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works-slide-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.works-slide-text {
+  flex: 1;
+  padding: 2rem;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.works-slide-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+  font-family: 'League Spartan', sans-serif;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 15px rgba(0, 191, 99, 0.3);
+}
+
+.works-slide-description {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--text-light);
+  line-height: 1.8;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.works-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.works-slider-nav:hover {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 191, 99, 0.4);
+}
+
+.works-slider-nav.prev {
+  left: 30px;
+}
+
+.works-slider-nav.next {
+  right: 30px;
+}
+
+.works-slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.works-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.works-dot.active {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 191, 99, 0.5);
+}
+
+.works-dot:hover {
+  background: var(--text-white);
+  border-color: var(--text-white);
+  transform: scale(1.2);
 }
 
 /* Collaboration Footer */
@@ -1178,6 +1611,8 @@ ul li a:hover {
     border-radius: 2px;
   }
 
+  /* UNUSED: Hero section styles - commented out */
+  /*
   .hero-section {
     flex-direction: column;
     text-align: center;
@@ -1193,10 +1628,20 @@ ul li a:hover {
   .hero-buttons {
     justify-content: center;
   }
+  */
 
   .slider-wrapper {
     height: 45vh;
     min-height: 280px;
+  }
+
+  /* Saalik Icon - Mobile */
+  .slider-top-left-icon {
+    width: 60px;
+    height: 60px;
+    top: 15px;
+    left: 15px;
+    padding: 6px;
   }
 
   .slider-nav {
@@ -1260,6 +1705,14 @@ ul li a:hover {
     border-radius: 15px;
   }
 
+  /* Reset natraj image margin on mobile */
+  .section-image img[src="/natrajan.png"],
+  .section-image img[src="natrajan.png"] {
+    margin-left: 0;
+    max-width: 100%;
+    max-height: 300px;
+  }
+
   .section-heading {
     font-size: clamp(2.2rem, 6vw, 3.5rem);
     text-align: center;
@@ -1284,6 +1737,124 @@ ul li a:hover {
     width: fit-content;
     padding: 18px 40px;
     font-size: 1.2rem;
+  }
+
+  /* Our Initiative - Mobile */
+  .initiative-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .initiative-slider-container {
+    height: 250px;
+  }
+
+  .initiative-logo-item {
+    padding: 2rem;
+  }
+
+  .initiative-slider-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .initiative-slider-nav.prev {
+    left: 12px;
+  }
+
+  .initiative-slider-nav.next {
+    right: 12px;
+  }
+
+  /* Works Done Slider - Mobile */
+  .works-done-section {
+    padding: 4rem 1.5rem;
+    overflow-x: hidden;
+  }
+
+  .works-done-container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .works-slider-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .works-slider-container {
+    height: auto;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  .works-slide-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+  }
+
+  .works-slide-image {
+    flex: none;
+    height: 200px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .works-slide-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  .works-slide-text {
+    flex: none;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .works-slide-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .works-slide-description {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .works-slider-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .works-slider-nav.prev {
+    left: 12px;
+  }
+
+  .works-slider-nav.next {
+    right: 12px;
   }
 
   .collaboration-footer {
@@ -1419,6 +1990,8 @@ ul li a:hover {
     height: 2.5px;
   }
 
+  /* UNUSED: Hero section styles - commented out */
+  /*
   .hero-section {
     padding: 1.5rem 1rem;
     min-height: 70vh;
@@ -1443,10 +2016,20 @@ ul li a:hover {
     padding: 14px 28px;
     font-size: 0.95rem;
   }
+  */
 
   .slider-wrapper {
     height: 35vh;
     min-height: 220px;
+  }
+
+  /* Saalik Icon - Small Mobile */
+  .slider-top-left-icon {
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: 10px;
+    padding: 4px;
   }
 
   .slider-nav {
@@ -1491,6 +2074,14 @@ ul li a:hover {
     border-radius: 12px;
   }
 
+  /* Reset natraj image margin on small mobile */
+  .section-image img[src="/natrajan.png"],
+  .section-image img[src="natrajan.png"] {
+    margin-left: 0;
+    max-width: 100%;
+    max-height: 250px;
+  }
+
   .section-heading {
     font-size: clamp(1.8rem, 6vw, 2.8rem);
     margin-bottom: 1.5rem;
@@ -1509,6 +2100,106 @@ ul li a:hover {
   .section-btn {
     padding: 16px 35px;
     font-size: 1.1rem;
+  }
+
+  /* Our Initiative - Small Mobile */
+  .initiative-section {
+    padding: 3rem 1rem;
+  }
+
+  .initiative-slider-container {
+    height: 200px;
+  }
+
+  .initiative-logo-item {
+    padding: 1.5rem;
+  }
+
+  .initiative-slider-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .initiative-slider-nav.prev {
+    left: 8px;
+  }
+
+  .initiative-slider-nav.next {
+    right: 8px;
+  }
+
+  /* Works Done Slider - Small Mobile */
+  .works-done-section {
+    padding: 3rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .works-done-container {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .works-slider-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .works-slider-container {
+    height: auto;
+    min-height: 350px;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .works-slide-content {
+    padding: 1rem;
+    gap: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .works-slide-image {
+    height: 150px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .works-slide-text {
+    padding: 0.8rem;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .works-slide-title {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .works-slide-description {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+    line-height: 1.5;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .works-slider-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .works-slider-nav.prev {
+    left: 8px;
+  }
+
+  .works-slider-nav.next {
+    right: 8px;
   }
 
   .collaboration-footer {
@@ -1738,11 +2429,13 @@ a:focus {
   outline-offset: 2px;
 }
 
-/* Loading states */
+/* Loading states - UNUSED: Commented out - not currently used in React app */
+/*
 .loading {
   opacity: 0.7;
   pointer-events: none;
 }
+*/
 
 /* Performance Optimizations */
 
@@ -1779,7 +2472,7 @@ a:focus {
   body {
     background:
       linear-gradient(rgba(7, 11, 9, 0.85), rgba(7, 11, 9, 0.85)),
-      url('bgsaalik.jpg') center/cover no-repeat fixed;
+      url('/bgsaalik.jpg') center/cover no-repeat fixed;
   }
 }
 
@@ -1795,8 +2488,9 @@ a:focus {
 
   .navbar,
   .mobile-nav,
-  .section-btn,
-  .overlay {
+  .section-btn
+  /* .overlay - UNUSED: commented out */
+  {
     display: none !important;
   }
 
@@ -1833,26 +2527,35 @@ a:focus {
 }
 
 /* Focus visible for better keyboard navigation */
+/* UNUSED: btn-primary and btn-secondary focus styles - commented out */
+/*
 .btn-primary:focus-visible,
 .btn-secondary:focus-visible,
+*/
 .section-btn:focus-visible,
 .buttoncontact:focus-visible {
   outline: 2px solid var(--primary-green);
   outline-offset: 2px;
 }
 
-/* Loading state */
+/* Loading state - UNUSED: Commented out - not currently used in React app */
+/*
 .loading {
   opacity: 0.6;
   pointer-events: none;
 }
+*/
 
-/* Error state */
+/* Error state - UNUSED: Commented out - not currently used in React app */
+/*
 .error {
   border: 2px solid #ff4444;
 }
+*/
 
-/* Success state */
+/* Success state - UNUSED: Commented out - not currently used in React app */
+/*
 .success {
   border: 2px solid var(--primary-green);
 }
+*/
