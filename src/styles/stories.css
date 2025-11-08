@@ -1,0 +1,37 @@
+.stories-page {
+  padding: 24px;
+}
+
+.stories-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 2px solid #2ecc71; /* green outline */
+  border-radius: 6px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.story-topic {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+}

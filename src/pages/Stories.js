@@ -1,58 +1,65 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Stories = () => {
+  const navigate = useNavigate();
+  
   const stories = [
     {
       id: 1,
-      title: "The Tale of Natrajan",
+      title: "Khyāk: Guardians of Darkness",
       location: "Kathmandu Valley",
-      image: "/natrajan.png",
-      description: "Discover the ancient story of Natrajan, a masterpiece of Nepalese sculpture that has stood the test of time. This magnificent statue represents centuries of artistic tradition and spiritual devotion.",
+      image: "/khyak.png",
       date: "2024"
     },
     {
       id: 2,
-      title: "Swayambhu: The Self-Arisen",
+      title: "Sacred Paths of Swayambhu",
       location: "Swayambhunath Stupa",
-      image: "/swayambhubanner.png",
-      description: "Explore the legend of Swayambhunath, one of the most sacred Buddhist sites in Nepal. The stupa's history dates back over 2,000 years, making it a symbol of Nepal's rich spiritual heritage.",
+      image: "/sample1.jpeg",
+      // description: "Perched atop a hill overlooking the Kathmandu Valley, the Swayambhunath Stupa stands as one of the most ancient and sacred Buddhist sites in Nepal. Known affectionately as the 'Monkey Temple' due to the holy monkeys that inhabit the area, this UNESCO World Heritage Site has been a center of pilgrimage and devotion for over 1,500 years.",
       date: "2024"
     },
     {
       id: 3,
-      title: "Bhairab: The Fierce Protector",
-      location: "Various Temples",
-      image: "/bhairabbanner.png",
-      description: "Learn about Bhairab, the fierce manifestation of Lord Shiva, who protects devotees and maintains cosmic order. These powerful statues are found throughout Nepal's sacred sites.",
+      title: "Mysteries of Pashupatinath",
+      location: "Pashupatinath",
+      image: "/sample2.jpeg",
+      // description: "Nestled on the banks of the sacred Bagmati River, the Pashupatinath Temple stands as one of the most revered Hindu shrines in the world. Dedicated to Lord Shiva in his form as Pashupati, the 'Lord of Animals,' this ancient temple complex has been a center of devotion, pilgrimage, and spiritual practice for over 1,400 years.",
       date: "2024"
     },
     {
       id: 4,
-      title: "Kali: The Divine Mother",
+      title: "THE RATO MACHHINDRANATH JATRA",
       location: "Kali Temples",
-      image: "/kalibanner.png",
-      description: "Uncover the stories behind the worship of Goddess Kali in Nepal. These statues represent the divine feminine power and the cycle of creation and destruction.",
+      image: "/sample3.jpeg",
+      // description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "2024"
-    },
-    {
-      id: 5,
-      title: "Kageshwori: The Crow Goddess",
-      location: "Kageshwori Temple",
-      image: "/kageshwori.png",
-      description: "Discover the unique temple of Kageshwori, where the goddess is worshipped in the form of crows. This ancient site holds deep cultural significance for the local community.",
-      date: "2024"
-    },
-    {
-      id: 6,
-      title: "Tokha Heritage",
-      location: "Tokha",
-      image: "/tokha.png",
-      description: "Explore the rich heritage of Tokha, a traditional Newari settlement that preserves ancient architectural and cultural traditions. The statues here tell stories of community and devotion.",
-      date: "2024"
+    // },
+    // {
+    //   id: 5,
+    //   title: "Testing Stories",
+    //   location: "Lalitpur",
+    //   image: "/sample4.jpeg",
+    // //  description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    //   date: "2024"
+    // },
+    // {
+    //   id: 6,
+    //   title: "Testing Stories",
+    //   location: "Tokha",
+    //   image: "/sample.jpeg",
+    //   description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    //   date: "2024"
     }
   ];
+
+  const handleReadMore = (storyId) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(`/story/${storyId}`);
+  };
 
   return (
     <div className="stories-page">
@@ -79,7 +86,12 @@ const Stories = () => {
                 </div>
                 <h3 className="story-title">{story.title}</h3>
                 <p className="story-description">{story.description}</p>
-                <button className="story-read-more">Read More</button>
+                <button 
+                  className="story-read-more"
+                  onClick={() => handleReadMore(story.id)}
+                >
+                  Read More
+                </button>
               </div>
             </div>
           ))}

@@ -1,47 +1,56 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const GuideBooking = () => {
+  const WAITLIST_KEY = 'guide_waitlist';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    destination: '',
-    date: '',
-    duration: '',
-    groupSize: '',
     specialRequests: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // Save waitlist entry to localStorage
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        destination: '',
-        date: '',
-        duration: '',
-        groupSize: '',
-        specialRequests: ''
-      });
-    }, 3000);
+    try {
+      const existing = JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
+      const entry = { id: Date.now().toString(), ...formData, timestamp: Date.now() };
+      existing.unshift(entry);
+      localStorage.setItem(WAITLIST_KEY, JSON.stringify(existing));
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: '', email: '', phone: '', specialRequests: '' });
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to save waitlist locally', err);
+      alert('Failed to join list. Try again.');
+    }
   };
+
+  // optional: function to fetch waitlist entries for admin/debug
+  const fetchWaitlistData = () => {
+    try {
+      return JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
+    } catch (err) {
+      console.error('Failed to read waitlist', err);
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    fetchWaitlistData();
+  }, []);
 
   return (
     <div className="guide-booking-page">
@@ -116,7 +125,7 @@ const GuideBooking = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
+                    placeholder="saalik@example.com"
                   />
                 </div>
 
@@ -134,90 +143,22 @@ const GuideBooking = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="destination">Destination / Area of Interest *</label>
-                  <select
-                    id="destination"
-                    name="destination"
-                    value={formData.destination}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select a destination</option>
-                    <option value="kathmandu-valley">Kathmandu Valley</option>
-                    <option value="swayambhunath">Swayambhunath</option>
-                    <option value="pashupatinath">Pashupatinath</option>
-                    <option value="boudhanath">Boudhanath</option>
-                    <option value="patan">Patan Durbar Square</option>
-                    <option value="bhaktapur">Bhaktapur Durbar Square</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="date">Preferred Date *</label>
-                    <input
-                      type="date"
-                      id="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="duration">Duration *</label>
-                    <select
-                      id="duration"
-                      name="duration"
-                      value={formData.duration}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select duration</option>
-                      <option value="half-day">Half Day (3-4 hours)</option>
-                      <option value="full-day">Full Day (6-8 hours)</option>
-                      <option value="multi-day">Multi-Day</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="groupSize">Group Size *</label>
-                  <select
-                    id="groupSize"
-                    name="groupSize"
-                    value={formData.groupSize}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select group size</option>
-                    <option value="1">1 person</option>
-                    <option value="2-4">2-4 people</option>
-                    <option value="5-10">5-10 people</option>
-                    <option value="10+">10+ people</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="specialRequests">Special Requests or Interests</label>
+                  <label htmlFor="specialRequests">Any suggestions for us?</label>
                   <textarea
                     id="specialRequests"
                     name="specialRequests"
                     value={formData.specialRequests}
                     onChange={handleChange}
                     rows="4"
-                    placeholder="Tell us about any specific interests, accessibility needs, or special requests..."
+                    placeholder="Tell us about any specific suggestions, changes or special requests..."
                   />
                 </div>
 
                 <button type="submit" className="booking-submit-btn">
-                  Launching Soon
+                  Join the Waitlist
                 </button>
-
                 <p className="form-note">
-                  * Will be available soon.
+                  * The feature will be available soon. *
                 </p>
               </form>
             )}

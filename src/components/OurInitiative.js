@@ -33,10 +33,6 @@ const OurInitiative = () => {
     });
   };
 
-  const goToSlide = (index) => {
-    setCurrentSlideIndex(index);
-  };
-
   return (
     <div className="initiative-section">
       <div className="initiative-container">
