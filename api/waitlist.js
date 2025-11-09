@@ -40,16 +40,16 @@ module.exports = async (req, res) => {
 
       // Validation
       if (!name || !email || !phone) {
-        return res.status(400).json({ 
-          error: 'Missing required fields: name, email, and phone are required' 
+        return res.status(400).json({
+          error: 'Missing required fields: name, email, and phone are required'
         });
       }
 
       // Check if email already exists
       const existingEntry = await Waitlist.findOne({ email });
       if (existingEntry) {
-        return res.status(409).json({ 
-          error: 'Email already exists in waitlist' 
+        return res.status(409).json({
+          error: 'Email already exists in waitlist'
         });
       }
 
@@ -78,13 +78,13 @@ module.exports = async (req, res) => {
     }
 
     // Method not allowed
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed on Waitlist' });
 
   } catch (error) {
     console.error('Error in waitlist API:', error);
-    return res.status(500).json({ 
+    return res.status(500).json({
       error: 'Internal server error',
-      message: error.message 
+      message: error.message
     });
   }
 };
