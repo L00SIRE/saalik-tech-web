@@ -14,14 +14,8 @@ const getApiBaseUrl = () => {
     
     // Production domain - saalik.tech
     if (hostname === 'saalik.tech' || hostname === 'www.saalik.tech' || hostname.includes('saalik.tech')) {
-      // Option 1: API on subdomain (if api.saalik.tech is set up)
-      // return 'https://api.saalik.tech/api';
-      
-      // Option 2: API on same domain (if API is on same server as frontend)
+      // API on same domain (Vercel serverless functions)
       return `${protocol}//${hostname}/api`;
-      
-      // Option 3: Custom API server URL (update with your actual production API URL)
-      // return 'https://your-api-server.com/api';
     }
   }
   

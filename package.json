@@ -4,6 +4,7 @@
   "description": "SAALIK - A cultural tourism and heritage platform for Nepal",
   "private": true,
   "dependencies": {
+    "mongoose": "^8.19.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.9.5",

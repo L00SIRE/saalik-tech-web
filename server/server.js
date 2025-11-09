@@ -13,6 +13,7 @@ const corsOptions = {
     // Allow requests with no origin (like mobile apps, curl, Postman)
     if (!origin) return callback(null, true);
     
+    console.log('origin', origin);
     // Allow production domain and all subdomains (wildcard for saalik.tech)
     if (origin.includes('saalik.tech')) {
       return callback(null, true);
@@ -205,4 +206,6 @@ app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
   console.log(`📡 API endpoints available at http://localhost:${PORT}/api`);
 });
+
+module.exports = app;1
 
