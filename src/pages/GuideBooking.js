@@ -27,13 +27,17 @@ const GuideBooking = () => {
     setError('');
 
     try {
+      console.log('Attempting to connect to:', API_ENDPOINTS.WAITLIST);
       const response = await fetch(API_ENDPOINTS.WAITLIST, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        mode: 'cors', // Explicitly set CORS mode
       });
+      
+      console.log('Response status:', response.status);
 
       const data = await response.json();
 
