@@ -18,11 +18,24 @@ Saalik_Tech_Web/
 │   │   ├── CollaborationFooter.js # Collaboration partners section
 │   │   ├── SaalikGroup.js # SAALIK group logos
 │   │   └── Footer.js     # Main footer
+│   ├── pages/            # Page components
+│   │   ├── Home.js       # Home page
+│   │   ├── Stories.js    # Stories listing page
+│   │   ├── StoryDetail.js # Story detail page
+│   │   └── GuideBooking.js # Guide booking page
+│   ├── config/           # Configuration files
+│   │   └── api.js        # API endpoint configuration
 │   ├── App.js            # Main application component
 │   ├── index.js          # React entry point
 │   └── index.css         # CSS imports
+├── server/                # Backend API server
+│   ├── server.js         # Express server
+│   ├── package.json      # Server dependencies
+│   ├── env.example       # Environment variables example
+│   └── README.md         # Server setup guide
 ├── style.css             # Main stylesheet (all styles)
 ├── package.json          # React dependencies
+├── API_SETUP.md          # API setup instructions
 ├── index.html            # LEGACY - Original HTML (not used)
 └── script.js             # LEGACY - Original JS (not used)
 ```
@@ -32,20 +45,42 @@ Saalik_Tech_Web/
 ### Prerequisites
 - Node.js (v14 or higher)
 - npm or yarn
+- MongoDB (local or MongoDB Atlas)
 
 ### Installation
 
-1. Install dependencies:
+1. **Install frontend dependencies:**
 ```bash
 npm install
 ```
 
-2. Start the development server:
+2. **Set up backend API server:**
 ```bash
+cd server
+npm install
+cp env.example .env
+# Edit .env with your MongoDB connection string
+```
+
+3. **Start the backend server:**
+```bash
+cd server
+npm run dev  # Development mode with auto-reload
+# OR
+npm start    # Production mode
+```
+
+The API server will run on `http://localhost:5000`
+
+4. **Start the frontend development server:**
+```bash
+# From root directory
 npm start
 ```
 
 The app will open at `http://localhost:3000`
+
+> **Note:** For detailed API setup instructions, see [API_SETUP.md](./API_SETUP.md)
 
 ### Build for Production
 
@@ -97,4 +132,5 @@ These can be uncommented if needed in the future.
 - All images are in the `public/` directory and referenced with `/filename.png`
 - The original CSS file (`style.css`) is imported in `src/index.css`
 - All functionality from the original JavaScript has been converted to React hooks (useState, useEffect)
+
 

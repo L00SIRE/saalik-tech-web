@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { API_ENDPOINTS } from '../config/api';
 
 const GuideBooking = () => {
-  const WAITLIST_KEY = 'guide_waitlist';
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,44 +12,49 @@ const GuideBooking = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setError(''); // Clear error when user types
   };
 
-  // Save waitlist entry to localStorage
-  const handleSubmit = (e) => {
+  // Save waitlist entry to API
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const existing = JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
-      const entry = { id: Date.now().toString(), ...formData, timestamp: Date.now() };
-      existing.unshift(entry);
-      localStorage.setItem(WAITLIST_KEY, JSON.stringify(existing));
+    setLoading(true);
+    setError('');
 
+    try {
+      const response = await fetch(API_ENDPOINTS.WAITLIST, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to join waitlist');
+      }
+
+      // Success
       setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', specialRequests: '' });
+      
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', specialRequests: '' });
-      }, 2000);
+      }, 3000);
     } catch (err) {
-      console.error('Failed to save waitlist locally', err);
-      alert('Failed to join list. Try again.');
+      console.error('Failed to save waitlist:', err);
+      setError(err.message || 'Failed to join waitlist. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
-
-  // optional: function to fetch waitlist entries for admin/debug
-  const fetchWaitlistData = () => {
-    try {
-      return JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
-    } catch (err) {
-      console.error('Failed to read waitlist', err);
-      return [];
-    }
-  };
-
-  useEffect(() => {
-    fetchWaitlistData();
-  }, []);
 
   return (
     <div className="guide-booking-page">
@@ -154,8 +158,28 @@ const GuideBooking = () => {
                   />
                 </div>
 
-                <button type="submit" className="booking-submit-btn">
-                  Join the Waitlist
+                {error && (
+                  <div style={{
+                    color: '#ff4444',
+                    backgroundColor: 'rgba(255, 68, 68, 0.1)',
+                    padding: '12px',
+                    borderRadius: '8px',
+                    marginBottom: '10px',
+                    fontSize: '0.9rem'
+                  }}>
+                    {error}
+                  </div>
+                )}
+                <button 
+                  type="submit" 
+                  className="booking-submit-btn"
+                  disabled={loading}
+                  style={{
+                    opacity: loading ? 0.6 : 1,
+                    cursor: loading ? 'not-allowed' : 'pointer'
+                  }}
+                >
+                  {loading ? 'Submitting...' : 'Join Waitlist'}
                 </button>
                 <p className="form-note">
                   * The feature will be available soon. *

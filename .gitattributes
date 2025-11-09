@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Prevent .env files from being committed
+.env filter=git-crypt diff=git-crypt
+server/.env filter=git-crypt diff=git-crypt
