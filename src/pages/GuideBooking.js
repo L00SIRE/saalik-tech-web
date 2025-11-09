@@ -37,7 +37,7 @@ const GuideBooking = () => {
         body: JSON.stringify(formData),
         mode: 'cors', // Explicitly set CORS mode
       });
-      
+
       console.log('Response status:', response.status);
 
       const data = await response.json();
@@ -49,13 +49,13 @@ const GuideBooking = () => {
       // Success
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', specialRequests: '' });
-      
+
       setTimeout(() => {
         setSubmitted(false);
       }, 3000);
     } catch (err) {
       console.error('Failed to save waitlist:', err);
-      
+
       // More specific error messages
       if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
         setError('Cannot connect to server. Please make sure the API server is running on http://localhost:5001');
@@ -70,7 +70,7 @@ const GuideBooking = () => {
   return (
     <div className="guide-booking-page">
       <Navbar />
-      
+
       <div className="booking-hero">
         <div className="booking-hero-content">
           <h1>GUIDE <span className="accent">BOOKING</span></h1>
@@ -181,8 +181,8 @@ const GuideBooking = () => {
                     {error}
                   </div>
                 )}
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="booking-submit-btn"
                   disabled={loading}
                   style={{
