@@ -26,7 +26,8 @@ Use in connection string: `MyP%40ss%23123`
 
 Your `.env` file should look like:
 ```env
-MONGODB_URI=mongodb+srv://sumandangal007_db_user:YOUR_PASSWORD@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace [USERNAME], [PASSWORD], and [CLUSTER] with your actual MongoDB Atlas credentials
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 ```
 
 **Important:**
@@ -50,7 +51,7 @@ MONGODB_URI=mongodb+srv://sumandangal007_db_user:YOUR_PASSWORD@cluster0.f4gnhai.
 
 1. Go to MongoDB Atlas
 2. Security → Database & Network Access
-3. Verify `sumandangal007_db_user` exists
+3. Verify your database user exists in MongoDB Atlas
 4. Check user has proper permissions (Read and write to any database)
 
 ### 5. Test Connection String
@@ -68,7 +69,7 @@ This will show if the .env is being read correctly (password will be visible, so
 - **Password has `@` symbol**: Must be encoded as `%40`
 - **Password has spaces**: Must be encoded as `%20` or removed
 - **.env file has quotes**: Remove quotes around the URI
-- **Wrong username**: Double-check `sumandangal007_db_user` is correct
+- **Wrong username**: Double-check your MongoDB Atlas username is correct
 - **Database name wrong**: Verify `saalik_tech_db` exists
 
 ### Quick Test

@@ -38,7 +38,7 @@ mongoose.connect(MONGODB_URI)
       console.log('   - $ → %24');
       console.log('   - % → %25');
       console.log('   - & → %26');
-      console.log('3. Check username is correct: sumandangal007_db_user');
+      console.log('3. Check username is correct in your MongoDB Atlas');
       console.log('4. Verify database name: saalik_tech_db');
     }
     

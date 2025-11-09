@@ -7,7 +7,7 @@
 
 ### Step 1: Reset Password in MongoDB Atlas
 1. Go to: https://cloud.mongodb.com/v2#/security/database/users
-2. Find user: `sumandangal007_db_user`
+2. Find your database user (e.g., `your_username`)
 3. Click **Edit** (pencil icon)
 4. Click **Edit Password**
 5. **Set a simple password** (letters and numbers only, no special characters)
@@ -23,7 +23,9 @@
 
 **Example:**
 ```env
-MONGODB_URI=mongodb+srv://sumandangal007_db_user:MyPassword123@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace [USERNAME], [PASSWORD], and [CLUSTER] with your actual values
+# Example format (do not use actual credentials in documentation):
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 ```
 
 ### Step 3: Test Connection
@@ -69,8 +71,8 @@ If your password has special characters, you need to URL-encode them:
 - Space → `%20`
 
 ## Verify Everything
-- ✅ Username: `sumandangal007_db_user`
-- ✅ Database: `saalik_tech_db`
-- ✅ Cluster: `cluster0.f4gnhai.mongodb.net`
+- ✅ Username: Your MongoDB Atlas username
+- ✅ Database: `saalik_tech_db` (or your database name)
+- ✅ Cluster: Your MongoDB Atlas cluster address
 - ✅ Password: Simple (no special chars) OR URL-encoded
 

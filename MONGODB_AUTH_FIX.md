@@ -17,7 +17,7 @@ The password in `server/.env` is either:
 
 1. Go to MongoDB Atlas: https://cloud.mongodb.com
 2. Navigate to: **Security** → **Database & Network Access**
-3. Find user: `sumandangal007_db_user`
+3. Find your database user (e.g., `your_username`)
 4. Click **Edit** (pencil icon)
 5. Click **Edit Password**
 6. **If you remember the password**: Use it
@@ -29,12 +29,15 @@ Open `server/.env` and replace `<db_password>` with your actual password:
 
 **Current (incorrect):**
 ```env
-MONGODB_URI=mongodb+srv://sumandangal007_db_user:<db_password>@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace [USERNAME], [PASSWORD], and [CLUSTER] with your actual values
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 ```
 
 **Should be (with real password):**
 ```env
-MONGODB_URI=mongodb+srv://sumandangal007_db_user:YOUR_ACTUAL_PASSWORD@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace bracketed values with your actual MongoDB Atlas credentials
+# Format: mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/[DATABASE]?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 ```
 
 ### Step 3: Verify Network Access
@@ -56,7 +59,7 @@ You should see: `✅ Connected to MongoDB`
 ## Troubleshooting
 
 - **Wrong password**: Double-check the password in MongoDB Atlas
-- **User doesn't exist**: Verify `sumandangal007_db_user` exists
+- **User doesn't exist**: Verify your database user exists in MongoDB Atlas
 - **Network blocked**: Check IP whitelist in Network Access
 - **Database name wrong**: Verify `saalik_tech_db` exists in your cluster
 
