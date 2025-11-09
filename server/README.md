@@ -45,7 +45,7 @@ Backend API server for SAALIK platform.
 
 ### Create Waitlist Entry
 ```bash
-curl -X POST http://localhost:5000/api/waitlist \
+curl -X POST http://localhost:5001/api/waitlist \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Doe",
@@ -57,6 +57,6 @@ curl -X POST http://localhost:5000/api/waitlist \
 
 ### Get All Entries
 ```bash
-curl http://localhost:5000/api/waitlist
+curl http://localhost:5001/api/waitlist
 ```
 

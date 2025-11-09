@@ -51,10 +51,10 @@ npm install
 
 2. Edit `.env` and update the MongoDB connection string:
    ```env
-   PORT=5000
+   PORT=5001
    MONGODB_URI=mongodb://localhost:27017/saalik_db
    # OR for MongoDB Atlas:
-   # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/saalik_db?retryWrites=true&w=majority
+   # MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/saalik_db?retryWrites=true&w=majority
    NODE_ENV=development
    ```
 
@@ -121,7 +121,7 @@ curl -X POST http://localhost:5000/api/waitlist \
 
 2. **Check connection string format:**
    - Local: `mongodb://localhost:27017/saalik_db`
-   - Atlas: `mongodb+srv://username:password@cluster.mongodb.net/saalik_db`
+   - Atlas: `mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/saalik_db`
 
 3. **Firewall/Network Issues:**
    - Ensure port 27017 (MongoDB) is accessible
