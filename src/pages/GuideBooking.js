@@ -27,8 +27,9 @@ const GuideBooking = () => {
     setError('');
 
     try {
-      console.log('Attempting to connect to:', API_ENDPOINTS.WAITLIST);
-      const response = await fetch(API_ENDPOINTS.WAITLIST, {
+      const waitlistUrl = API_ENDPOINTS.WAITLIST();
+      console.log('Attempting to connect to:', waitlistUrl);
+      const response = await fetch(waitlistUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

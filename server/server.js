@@ -7,15 +7,25 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware - CORS configuration
-// Allow all localhost origins for development
+// Allow production domain (saalik.tech) and wildcard for development
 const corsOptions = {
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps, curl, Postman)
     if (!origin) return callback(null, true);
     
+    // Allow production domain and all subdomains (wildcard for saalik.tech)
+    if (origin.includes('saalik.tech')) {
+      return callback(null, true);
+    }
+    
     // Allow localhost on any port for development
     if (origin.match(/^http:\/\/localhost:\d+$/) || 
         origin.match(/^http:\/\/127\.0\.0\.1:\d+$/)) {
+      return callback(null, true);
+    }
+    
+    // For development mode, allow all origins (wildcard behavior)
+    if (process.env.NODE_ENV === 'development') {
       return callback(null, true);
     }
     
