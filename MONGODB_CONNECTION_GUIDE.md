@@ -16,6 +16,7 @@
    ```
    mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
    ```
+   Note: Replace `<username>` and `<password>` with your actual credentials.
 
 ## Step 2: Replace Placeholders
 
@@ -26,7 +27,9 @@ Replace the placeholders in the connection string:
 
 **Final format should be:**
 ```
-mongodb+srv://your_username:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace the bracketed values with your actual MongoDB Atlas credentials
+# Format: mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/[DATABASE]?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 ```
 
 ## Step 3: Update Your .env File
@@ -35,7 +38,8 @@ Update `server/.env` with your new connection string:
 
 ```env
 PORT=5001
-MONGODB_URI=mongodb+srv://your_username:YOUR_ACTUAL_PASSWORD@YOUR_CLUSTER.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+# Replace [USERNAME], [PASSWORD], and [CLUSTER] with your actual MongoDB Atlas credentials
+MONGODB_URI=mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
 NODE_ENV=development
 ```
 

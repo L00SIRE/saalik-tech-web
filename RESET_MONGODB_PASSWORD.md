@@ -48,7 +48,9 @@
 
 1. **Update `server/.env`**:
    ```env
-   MONGODB_URI=mongodb+srv://YOUR_USERNAME:NEW_PASSWORD@YOUR_CLUSTER.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+   # Replace bracketed values with your actual MongoDB Atlas credentials
+   # Connection string format: mongodb+srv://[USERNAME]:[PASSWORD]@[CLUSTER].mongodb.net/[DATABASE]?retryWrites=true&w=majority
+   MONGODB_URI=mongodb+srv://[YOUR_USERNAME]:[YOUR_PASSWORD]@[YOUR_CLUSTER].mongodb.net/saalik_tech_db?retryWrites=true&w=majority
    ```
 
 2. **Test the connection**:
