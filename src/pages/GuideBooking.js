@@ -50,7 +50,13 @@ const GuideBooking = () => {
       }, 3000);
     } catch (err) {
       console.error('Failed to save waitlist:', err);
-      setError(err.message || 'Failed to join waitlist. Please try again.');
+      
+      // More specific error messages
+      if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+        setError('Cannot connect to server. Please make sure the API server is running on http://localhost:5001');
+      } else {
+        setError(err.message || 'Failed to join waitlist. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
