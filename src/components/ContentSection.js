@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ContentSection = ({ image, imageAlt, headingPrimary, headingAccent, description, buttonText, buttonLink, reverse }) => {
   return (
@@ -14,9 +15,15 @@ const ContentSection = ({ image, imageAlt, headingPrimary, headingAccent, descri
           </div>
           <p className="section-desc" dangerouslySetInnerHTML={{ __html: description }}></p>
           {buttonText && (
-            <a href={buttonLink || "#"} className="section-btn" target={buttonLink?.startsWith('http') ? '_blank' : '_self'} rel={buttonLink?.startsWith('http') ? 'noopener noreferrer' : undefined}>
-              {buttonText}
-            </a>
+            buttonLink?.startsWith('http') ? (
+              <a href={buttonLink} className="section-btn" target="_blank" rel="noopener noreferrer">
+                {buttonText}
+              </a>
+            ) : (
+              <Link to={buttonLink || "#"} className="section-btn">
+                {buttonText}
+              </Link>
+            )
           )}
         </div>
       </div>

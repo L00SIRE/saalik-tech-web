@@ -19,8 +19,8 @@ const WorksDoneSlider = () => {
     },
     {
       id: 3,
-      title: "Guide Booking Platform",
-      description: "Created a verified guide booking system connecting travelers with trusted local experts for authentic cultural experiences.",
+      title: "Guide Waitlist Platform",
+      description: "Created a verified guide waitlist system connecting travelers with trusted local experts for authentic cultural experiences.",
       image: "/guide.png",
     },
     {

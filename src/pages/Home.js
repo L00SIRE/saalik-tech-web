@@ -43,8 +43,8 @@ function Home() {
         imageAlt="guide"
         headingPrimary="GUIDE "
         headingAccent="BOOKING"
-        description="Discover Nepal with confidence by <span class='saalik-highlight'>booking verified local guides</span> through SAALIK. Our <span class='saalik-highlight'>trusted guides</span> bring culture, history, and spirituality to life while ensuring your journey is both <span class='saalik-highlight'>safe and insightful.</span> With expertise ranging from heritage walks to temple tours, they help you <span class='saalik-highlight'>experience Nepal beyond the surface.</span>"
-        buttonText="BOOK A GUIDE"
+        description="Discover Nepal with confidence by <span class='saalik-highlight'>joining our waitlist for verified local guides</span> through SAALIK. Our <span class='saalik-highlight'>trusted guides</span> will bring culture, history, and spirituality to life while ensuring your journey is both <span class='saalik-highlight'>safe and insightful.</span> With expertise ranging from heritage walks to temple tours, they help you <span class='saalik-highlight'>experience Nepal beyond the surface.</span>"
+        buttonText="JOIN WAITLIST"
         buttonLink="/guide-booking"
         reverse={false}
       />

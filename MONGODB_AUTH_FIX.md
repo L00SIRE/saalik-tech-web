@@ -1,0 +1,62 @@
+# MongoDB Authentication Error Fix
+
+## Error
+```
+MongoServerError: bad auth : authentication failed
+```
+
+## Cause
+The password in `server/.env` is either:
+- Still the placeholder `<db_password>`
+- Incorrect/outdated
+- The user doesn't have proper permissions
+
+## Solution
+
+### Step 1: Get Your MongoDB Password
+
+1. Go to MongoDB Atlas: https://cloud.mongodb.com
+2. Navigate to: **Security** → **Database & Network Access**
+3. Find user: `sumandangal007_db_user`
+4. Click **Edit** (pencil icon)
+5. Click **Edit Password**
+6. **If you remember the password**: Use it
+7. **If you forgot**: Set a new password and **SAVE IT IMMEDIATELY**
+
+### Step 2: Update server/.env
+
+Open `server/.env` and replace `<db_password>` with your actual password:
+
+**Current (incorrect):**
+```env
+MONGODB_URI=mongodb+srv://sumandangal007_db_user:<db_password>@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+```
+
+**Should be (with real password):**
+```env
+MONGODB_URI=mongodb+srv://sumandangal007_db_user:YOUR_ACTUAL_PASSWORD@cluster0.f4gnhai.mongodb.net/saalik_tech_db?retryWrites=true&w=majority
+```
+
+### Step 3: Verify Network Access
+
+Make sure your IP is whitelisted in MongoDB Atlas:
+1. Go to **Security** → **Network Access**
+2. Click **Add IP Address**
+3. Add your current IP or use `0.0.0.0/0` for development (less secure)
+
+### Step 4: Restart Server
+
+```bash
+cd server
+npm run dev
+```
+
+You should see: `✅ Connected to MongoDB`
+
+## Troubleshooting
+
+- **Wrong password**: Double-check the password in MongoDB Atlas
+- **User doesn't exist**: Verify `sumandangal007_db_user` exists
+- **Network blocked**: Check IP whitelist in Network Access
+- **Database name wrong**: Verify `saalik_tech_db` exists in your cluster
+

@@ -99,11 +99,11 @@ const GuideBooking = () => {
           </div>
 
           <div className="booking-form-wrapper">
-            <h2>Book Your Guide</h2>
+            <h2>Join the Waitlist</h2>
             {submitted ? (
               <div className="booking-success">
                 <h3>Thank You!</h3>
-                <p>Your booking request has been submitted. We'll contact you shortly to confirm your guide booking.</p>
+                <p>You've successfully joined our waitlist! We'll contact you shortly when guide booking becomes available.</p>
               </div>
             ) : (
               <form className="booking-form" onSubmit={handleSubmit}>
