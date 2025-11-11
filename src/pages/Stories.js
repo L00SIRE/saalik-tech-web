@@ -63,7 +63,7 @@ const Stories = () => {
       <div className="stories-hero">
         <div className="stories-hero-content">
           <h1>UNTOLD <span className="accent">STORIES</span></h1>
-          <p>Browse through SAALIK's ever growing database of statues and sculptures from across Nepal, where each piece carries a story.</p>
+          <p>Discover Nepal beyond the surface with SAALIK, uncover the stories, myths, and beliefs woven into our temples, sculptures, and heritage.</p>
         </div>
       </div>
 
