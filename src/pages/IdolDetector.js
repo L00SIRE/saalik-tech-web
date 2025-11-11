@@ -141,12 +141,27 @@ const IdolDetector = () => {
     setScanProgress(100);
 
     // Detection based on filename only (fixed dataset)
-    const fileName = imageFile.name.toLowerCase();
+    // Normalize filename: lowercase, remove spaces, remove special chars for matching
+    const fileName = imageFile.name.toLowerCase()
+      .replace(/\s+/g, '')           // Remove spaces
+      .replace(/[_-]/g, '')          // Remove underscores and hyphens
+      .replace(/\.(jpg|jpeg|png|gif|webp|heic|heif)$/i, ''); // Remove extension
+    
     let detectedKey = null;
 
-    // Check filename for idol names in database
+    // Check filename for idol names in database (case-insensitive, flexible matching)
     for (const key in idolDatabase) {
-      if (fileName.includes(key)) {
+      const normalizedKey = key.toLowerCase();
+      // Check if filename contains the key or vice versa
+      if (fileName.includes(normalizedKey) || normalizedKey.includes(fileName)) {
+        detectedKey = key;
+        break;
+      }
+      
+      // Also check for common variations and partial matches
+      // e.g., "krishna" matches "krishna", "krishnaidol", "idolkrishna", etc.
+      const keyPattern = new RegExp(normalizedKey, 'i');
+      if (keyPattern.test(fileName)) {
         detectedKey = key;
         break;
       }
@@ -161,6 +176,14 @@ const IdolDetector = () => {
     setIsScanning(false);
     setDetectionTime(duration);
     
+    // Log detection result for debugging
+    console.log('Detection result:', {
+      fileName: imageFile.name,
+      normalizedFileName: fileName,
+      detectedKey: detectedKey,
+      availableKeys: Object.keys(idolDatabase)
+    });
+    
     if (detectedKey) {
       // Idol detected - calculate confidence (94-99% for exact match)
       const finalConfidence = (94 + Math.random() * 5).toFixed(1);
@@ -168,7 +191,8 @@ const IdolDetector = () => {
       setDetectedIdol(idolDatabase[detectedKey]);
       setDetectionError(null);
     } else {
-      // No match found - show error message
+      // No match found - show error message with helpful info
+      console.warn('No match found for filename:', imageFile.name);
       setDetectedIdol(null);
       setConfidence(null);
       setDetectionError(true);
@@ -179,6 +203,11 @@ const IdolDetector = () => {
     const file = e.target.files[0];
     if (file) {
       setDetectedIdol(null);
+      setDetectionError(null);
+      
+      // Log filename for debugging (especially useful for mobile)
+      console.log('Selected file:', file.name);
+      console.log('File name (lowercase):', file.name.toLowerCase());
       
       // Create preview URL
       const reader = new FileReader();
@@ -485,7 +514,10 @@ const IdolDetector = () => {
                 Couldn't detect the idol. Please upload the statue of a god.
               </p>
               <p className="error-hint">
-                Make sure the image filename contains the name of a Hindu deity (e.g., krishna.jpg, shiva.png, ganesh.jpg)
+                Make sure the image filename contains the name of a Hindu deity (case-insensitive).<br/>
+                Examples: krishna.jpg, Shiva.png, GANESH.jpg, durga-idol.png<br/>
+                <br/>
+                <strong>Available deities:</strong> Krishna, Shiva, Ganesh, Durga, Vishnu, Lakshmi, Hanuman, Saraswati
               </p>
               <button onClick={resetDetection} className="try-again-btn">
                 Try Again
