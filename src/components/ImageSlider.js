@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ImageSlider = () => {
+  const navigate = useNavigate();
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   
   const slides = [
-    { src: '/bhairabbanner.png', alt: 'Bhairab Banner' },
-    { src: '/swayambhubanner.png', alt: 'Swayambhu Banner' },
-    { src: '/kalibanner.png', alt: 'Kali Banner' }
+    { src: '/bhairabbanner.png', alt: 'Bhairab Banner', storyId: 3 }, // Kaal Bhairab story
+    { src: '/swayambhubanner.png', alt: 'Swayambhu Banner', storyId: null }, // Not uploaded yet, redirect to stories
+    { src: '/kalibanner.png', alt: 'Kali Banner', storyId: 2 } // Kali story
   ];
 
   const totalSlides = slides.length;
@@ -98,6 +100,16 @@ const ImageSlider = () => {
             <div 
               key={index}
               className={`slide ${index === currentSlideIndex ? 'active' : ''}`}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Redirect to specific story if storyId exists, otherwise to stories page
+                if (slide.storyId) {
+                  navigate(`/story/${slide.storyId}`);
+                } else {
+                  navigate('/stories');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
             >
               <img src={slide.src} alt={slide.alt} />
             </div>

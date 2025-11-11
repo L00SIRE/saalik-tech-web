@@ -2476,7 +2476,7 @@ a:focus {
 }
 
 .story-location {
-  color: var(--primary-green);
+  color: var(--text-light);
   font-weight: 600;
 }
 
@@ -2487,7 +2487,7 @@ a:focus {
 .story-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-light);
+  color: var(--primary-green);
   margin-bottom: 15px;
   line-height: 1.3;
 }
