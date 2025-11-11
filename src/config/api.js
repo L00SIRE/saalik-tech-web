@@ -31,6 +31,7 @@ export const API_ENDPOINTS = {
   HEALTH: () => `${getApiBaseUrl()}/health`,
   WAITLIST: () => `${getApiBaseUrl()}/waitlist`,
   WAITLIST_BY_ID: (id) => `${getApiBaseUrl()}/waitlist/${id}`,
+  IDOLS: () => `${getApiBaseUrl()}/idols`,
 };
 
 // Default export for backward compatibility

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Stories from './pages/Stories';
 import GuideBooking from './pages/GuideBooking';
 import StoryDetail from './pages/StoryDetail';
+import IdolDetector from './pages/IdolDetector';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Route path="/stories" element={<Stories />} />
         <Route path="/guide-booking" element={<GuideBooking />} />
         <Route path="/story/:id" element={<StoryDetail />} />
+        {/* Hidden internal route - not in navigation */}
+        <Route path="/internal/idol-detector" element={<IdolDetector />} />
       </Routes>
     </Router>
   );
