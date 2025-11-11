@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
 import GuideBooking from './pages/GuideBooking';
@@ -10,6 +11,7 @@ import IdolDetector from './pages/IdolDetector';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/stories" element={<Stories />} />

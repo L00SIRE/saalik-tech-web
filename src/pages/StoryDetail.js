@@ -8,12 +8,10 @@ const StoryDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);
 
-  // This would typically come from an API or database
   const getStoryDetails = (storyId) => {
     const stories = {
       1: {
@@ -21,7 +19,7 @@ const StoryDetail = () => {
         title: "Khyāk: Guardians of Darkness",
         subtitle: "The Mysterious Protectors of Newar Homes",
         location: "Kathmandu Valley",
-        image: "/sample.png", // Updated image path
+        image: "/sample.png",
         fullDescription: `
         In the labyrinthine alleys of Kathmandu Valley's ancient Newar settlements, where wooden houses lean toward each other and shadows stretch long after sunset, tales of supernatural beings have been whispered from generation to generation. Among these spectral entities, the Khyāk (also spelled Khyā or Khyah) stands as one of the most intriguing and multifaceted creatures in Newari folklore, a being that embodies the complex relationship between fear, protection, and prosperity in traditional Newar culture.
 
@@ -44,18 +42,14 @@ const StoryDetail = () => {
         Beyond entertainment and religious significance, the Khyāk serves a practical social function as a cautionary figure. Parents invoke these creatures to keep children away from dark, potentially dangerous places, abandoned buildings, isolated areas, and hazardous locations.
       `,
         date: "2025",
-        additionalImages: [
-          // "/sample1.jpeg",
-          // "/sample2.jpeg",
-          // "/sample3.jpeg"
-        ]
+        additionalImages: []
       },
       2: {
         id: 2,
         title: "The Self Emerging Statue of Kali",
         subtitle: "The rise of the Birupakshya at Pashupatinath",
         location: "Pashupatinath",
-        image: "/kalibanner.png", // Updated image path
+        image: "/kalibanner.png",
         fullDescription: `
     
     <h2 style="color: #00bf63; font-size: 1.8rem; margin: 1.5rem 0;">A Sacred Mystery Spanning Millennia</h2>
@@ -96,18 +90,14 @@ const StoryDetail = () => {
     As pilgrims and scholars continue to study and venerate this remarkable statue, Birupakshya remains a powerful reminder of the interconnectedness of time, spirituality, and human destiny. The mystery ultimately transcends simple archaeological or religious categorization, existing as a living symbol of Nepal's spiritual depth and the timeless human quest for understanding divine mysteries.​
   `,
         date: "2024",
-        additionalImages: [
-          // "/sample1.jpeg",
-          // "/sample2.jpeg",
-          // "/sample3.jpeg"
-        ]
+        additionalImages: []
       },
       3: {
         id: 3,
         title: "The Tale of Kaal Bhairab",
         subtitle: "Kathmandu's Smiling Guardian of Justice",
         location: "Kathmandu Durbar Square",
-        image: "/bhairabbanner.png", // Updated image path
+        image: "/bhairabbanner.png",
         fullDescription: `
   
     <h2 style="color: #00bf63; font-size: 1.8rem; margin: 1.5rem 0;">The Eternal Guardian of Justice and the Legend of the Smiling God</h2>
@@ -175,18 +165,14 @@ const StoryDetail = () => {
     Kaal Bhairav of Kathmandu Durbar Square is far more than a sculpture. He is the city’s eternal guardian, judge, and philosopher. From Licchavi artisans to modern worshippers, he continues to embody the union of art, spirituality, and justice. His enduring smile reminds all who stand before him that even divine power respects human wit, and that true wisdom lies not only in fear, but in understanding, compassion, and laughter.
   `,
         date: "2025",
-        additionalImages: [
-          // "/sample1.jpeg",
-          // "/sample2.jpeg",
-          // "/sample3.jpeg"
-        ]
+        additionalImages: []
       },
       4: {
         id: 4,
-        title: "THE RATO MACHHINDRANATH JATRA",
-        subtitle: "Historical Origins and Religious Significance",
-        location: "Lalitpur",
-        image: "/laxminarayan.png", // Updated image path (assuming you have this image)
+        title: "The God who vanished for 37 years",
+        subtitle: "The lost and found story of the Laxmi-Narayan statue",
+        location: "Patan",
+        image: "/laxminarayan.png", 
         fullDescription: `
         
 The Laxmi-Narayan statue represents one of Nepal's most emotionally powerful stories of cultural theft and spiritual recovery. This isn't just about an ancient sculpture, it's about a community's faith, an 800-year devotion interrupted, and an extraordinary international effort to bring a god home.
@@ -247,21 +233,15 @@ Art historian Lain Singh Bangdel's 1989 book Stolen Images of Nepal documented m
 
 The Laxmi-Narayan represents hope—that even after decades, even after being labeled a mere "artifact," a stolen god can find its way home and be restored to its living community. As US Ambassador Randy Berry said at the ceremony: "I hope this is the first of many such celebrations." `,
         date: "2025",
-        additionalImages: [
-          // "/sample1.jpeg",
-          // "/sample2.jpeg",
-          // "/sample3.jpeg"
-        ]
+        additionalImages: []
       },
             5: {
         id: 5,
         title: "The self worship festival of Mha Puja",
         subtitle: "The festival of self love and inner reflection",
         location: "Nepal",
-        image: "/mhabanner.png", // Updated image path
-        fullDescription: `Here is your text about Mha Puja of Nepal, with all dashes and special symbols removed for clarity:
-
-
+        image: "/mhabanner.png",
+        fullDescription: `
 In the heart of the Kathmandu Valley, as autumn's golden light filters through ancient courtyards and traditional Newar houses, one of Nepal's most profound and intimate festivals unfolds. Mha Puja, literally meaning worship of the self, represents far more than a religious observance. It embodies a philosophical celebration of individual consciousness, spiritual self-awareness, and the divine nature inherent within every human being. This sacred tradition, practiced exclusively by the Newar community for over a millennium, offers a unique perspective on personal spirituality that distinguishes it from all other festivals in the Hindu-Buddhist world.
 
   <h2 style="color: #00bf63; font-size: 2rem; margin: 2rem 0 1rem 0;">Historical Origins and Cultural Foundation</h2>
@@ -353,11 +333,7 @@ As Nepal continues to modernize and globalize, Mha Puja remains a vital cultural
 
 Through Mha Puja, the Newar community has gifted the world a unique spiritual practice that celebrates the profound truth that we are all, in our deepest essence, worthy of reverence and capable of divine realization. This sacred night of self-worship illuminates not only individual homes with flickering oil lamps but also the eternal human capacity for self-transformation and spiritual awakening. `,
         date: "2025",
-        additionalImages: [
-          // "/sample1.jpeg",
-          // "/sample2.jpeg",
-          // "/sample3.jpeg"
-        ]
+        additionalImages: []
       },
     };
 
@@ -366,7 +342,6 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
 
   const story = getStoryDetails(Number(id));
 
-  // Stories data from Stories page (using same structure as Stories.js)
   const storiesFromStoriesPage = [
     { id: 1, title: "Khyāk: Guardians of Darkness", location: "Kathmandu Valley", image: "/khyak.png" },
     { id: 2, title: "The Self Emerging Statue of Kali", location: "Pashupatinath Temple", image: "/kalii.png" },
@@ -374,34 +349,30 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
     { id: 4, title: "The God who vanished for 37 years", location: "Lost Stories", image: "/laxmi.png" }
   ];
 
-  // Generate recommended stories dynamically from Stories page, excluding current story
   const recommendedStories = storiesFromStoriesPage
-    .filter(storyItem => storyItem.id !== story.id) // Exclude current story
+    .filter(storyItem => storyItem.id !== story.id)
     .map(storyItem => {
       const storyData = getStoryDetails(storyItem.id);
       return {
         id: storyItem.id,
-        title: storyData.title,
-        location: storyData.location,
-        image: storyItem.image, // Use image from Stories page, not from StoryDetail
+        image: storyItem.image
       };
     })
-    .slice(0, 3); // Limit to 3 recommendations
+    .slice(0, 3);
 
   return (
     <div className="story-detail-page">
       <Navbar />
       
       <div className="story-detail-container">
-        {/* Update the Back Button container styles */}
         <div style={{ 
           display: 'flex', 
           justifyContent: 'flex-end', 
           marginBottom: '2rem',
-          marginTop: '2rem',  // Added top margin
-          position: 'sticky',  // Makes button stick while scrolling
-          top: '20px',        // Distance from top while sticky
-          zIndex: 10         // Ensures button stays above other content
+          marginTop: '2rem',
+          position: 'sticky',
+          top: '20px',
+          zIndex: 10
         }}>
           <button 
             className="back-button" 
@@ -425,10 +396,10 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
               boxShadow: '0 2px 10px rgba(0,191,99,0.2)',
               position: 'relative',
               overflow: 'hidden',
-              marginTop: '20px'  // Added top margin to button itself
+              marginTop: '20px'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateX(5px)'; // Changed from -5px to 5px
+              e.currentTarget.style.transform = 'translateX(5px)';
               e.currentTarget.style.backgroundColor = '#00a352';
             }}
             onMouseLeave={(e) => {
@@ -443,7 +414,7 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
               viewBox="0 0 24 24" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: '4px' }} // Changed from marginRight to marginLeft
+              style={{ marginLeft: '4px' }}
             >
               <path 
                 d="M5 12H19M19 12L12 19M19 12L12 5" 
@@ -527,7 +498,6 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
           </div>
         </div>
 
-        {/* Recommended Stories Section */}
         <div className="recommended-stories" style={{
           marginTop: '6rem',
           padding: '3rem',
@@ -578,7 +548,6 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
                   position: 'relative'
                 }}
                 onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                   navigate(`/story/${story.id}`);
                 }}
                 onMouseEnter={(e) => {
