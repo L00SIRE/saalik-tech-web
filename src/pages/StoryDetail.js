@@ -351,13 +351,10 @@ Through Mha Puja, the Newar community has gifted the world a unique spiritual pr
 
   const recommendedStories = storiesFromStoriesPage
     .filter(storyItem => storyItem.id !== story.id)
-    .map(storyItem => {
-      const storyData = getStoryDetails(storyItem.id);
-      return {
-        id: storyItem.id,
-        image: storyItem.image
-      };
-    })
+    .map(storyItem => ({
+      id: storyItem.id,
+      image: storyItem.image
+    }))
     .slice(0, 3);
 
   return (
