@@ -7,7 +7,7 @@ const ImageSlider = () => {
   
   const slides = [
     { src: '/bhairabbanner.png', alt: 'Bhairab Banner', storyId: 3 }, // Kaal Bhairab story
-    { src: '/swayambhubanner.png', alt: 'Swayambhu Banner', storyId: null }, // Not uploaded yet, redirect to stories
+    { src: '/khyakbannerr.png', alt: 'Khyak Banner', storyId: 1 }, // Khyak story
     { src: '/kalibanner.png', alt: 'Kali Banner', storyId: 2 } // Kali story
   ];
 
@@ -100,7 +100,9 @@ const ImageSlider = () => {
             <div 
               key={index}
               className={`slide ${index === currentSlideIndex ? 'active' : ''}`}
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 // Redirect to specific story if storyId exists, otherwise to stories page
                 if (slide.storyId) {
@@ -111,7 +113,21 @@ const ImageSlider = () => {
               }}
               style={{ cursor: 'pointer' }}
             >
-              <img src={slide.src} alt={slide.alt} />
+              <img 
+                src={slide.src} 
+                alt={slide.alt}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  if (slide.storyId) {
+                    navigate(`/story/${slide.storyId}`);
+                  } else {
+                    navigate('/stories');
+                  }
+                }}
+                style={{ pointerEvents: 'auto', cursor: 'pointer' }}
+              />
             </div>
           ))}
         </div>

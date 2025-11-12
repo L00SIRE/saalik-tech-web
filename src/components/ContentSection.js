@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ContentSection = ({ image, imageAlt, headingPrimary, headingAccent, description, buttonText, buttonLink, reverse }) => {
+const ContentSection = ({ image, imageAlt, headingPrimary, headingAccent, description, buttonText, buttonLink, reverse, customContent }) => {
   return (
     <div className="content-section">
       <div className={`section-wrapper ${reverse ? 'reverse' : ''}`}>
@@ -14,6 +14,7 @@ const ContentSection = ({ image, imageAlt, headingPrimary, headingAccent, descri
             <span className={reverse ? "primary" : "accent"}> {headingAccent}</span>
           </div>
           <p className="section-desc" dangerouslySetInnerHTML={{ __html: description }}></p>
+          {customContent && <div className="section-custom-content">{customContent}</div>}
           {buttonText && (
             buttonLink?.startsWith('http') ? (
               <a href={buttonLink} className="section-btn" target="_blank" rel="noopener noreferrer">

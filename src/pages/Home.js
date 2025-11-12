@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import ImageSlider from '../components/ImageSlider';
 import ContentSection from '../components/ContentSection';
@@ -9,6 +9,30 @@ import SaalikGroup from '../components/SaalikGroup';
 import Footer from '../components/Footer';
 
 function Home() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const youtubeVideoId = 'o4jv8ZsH3Ts'; // Extracted from https://youtu.be/o4jv8ZsH3Ts
+
+  const openVideoModal = () => {
+    setIsVideoModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    document.body.style.overflow = 'unset'; // Restore scrolling
+  };
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isVideoModalOpen) {
+        closeVideoModal();
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isVideoModalOpen]);
+
   return (
     <div className="App">
       <Navbar />
@@ -23,7 +47,34 @@ function Home() {
         headingAccent="SAALIK?"
         description="<span class='saalik-highlight'>SAALIK</span> is a cultural tourism and heritage platform dedicated to <span class='saalik-highlight'>preserving,</span> promoting, and showcasing <span class='saalik-highlight'>Nepal's statues and sculptures/culture.</span> By blending technology with tradition, we provide travelers, researchers, and culture enthusiasts with an <span class='saalik-highlight'>authentic digital experience.</span> Our mission is to centralize and <span class='saalik-highlight'>digitalize information</span> on Nepal's cultural heritage, making it accessible worldwide. We envision becoming the leading platform for digital heritage tourism and <span class='saalik-highlight'>cultural preservation</span> in Nepal, bridging the gap between history and innovation. With features such as <span class='saalik-highlight'>AI based statue recognition,</span> a verified <span class='saalik-highlight'>guide booking system,</span> personalized <span class='saalik-highlight'>travel itineraries</span> and <span class='saalik-highlight'>emergency help support,</span> SAALIK is committed to safeguarding Nepal's timeless legacy while empowering travelers and local communities alike."
         reverse={false}
+        customContent={
+          <button className="section-btn watch-promo-btn" onClick={openVideoModal} aria-label="Watch Promo">
+            <span className="play-icon"></span>
+            <span className="play-text">WATCH PROMO</span>
+          </button>
+        }
       />
+
+      {/* YouTube Video Modal */}
+      {isVideoModalOpen && (
+        <div className="video-modal" onClick={closeVideoModal}>
+          <div className="video-modal__content" onClick={(e) => e.stopPropagation()}>
+            <button className="video-modal__close" onClick={closeVideoModal} aria-label="Close video">
+              ×
+            </button>
+            <div className="video-modal__iframe-wrapper">
+              <iframe
+                className="video-modal__iframe"
+                src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0`}
+                title="SAALIK Promo Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Untold Stories Section */}
       <ContentSection
