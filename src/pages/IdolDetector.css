@@ -114,7 +114,7 @@
 
 .auth-submit-btn {
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #00bf63, #00d4ff);
+  background: #00bf63;
   color: white;
   border: none;
   border-radius: 10px;
@@ -127,6 +127,7 @@
 }
 
 .auth-submit-btn:hover {
+  background: #00a050;
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(0, 191, 99, 0.5);
 }
@@ -183,18 +184,19 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(255, 68, 68, 0.1);
-  border: 1px solid rgba(255, 68, 68, 0.3);
+  background: rgba(0, 191, 99, 0.1);
+  border: 1px solid rgba(0, 191, 99, 0.3);
   border-radius: 8px;
-  color: #ff6666;
+  color: #00bf63;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: rgba(255, 68, 68, 0.2);
-  border-color: rgba(255, 68, 68, 0.5);
+  background: rgba(0, 191, 99, 0.2);
+  border-color: rgba(0, 191, 99, 0.5);
+  color: #00d4aa;
   transform: translateY(-2px);
 }
 
@@ -296,7 +298,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255, 0, 0, 0.8);
+  background: #00bf63;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -304,11 +306,13 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 191, 99, 0.3);
 }
 
 .reset-btn:hover {
-  background: rgba(255, 0, 0, 1);
+  background: #00a050;
   transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 191, 99, 0.5);
 }
 
 /* Scanning Animation */
@@ -640,7 +644,7 @@
 
 .try-again-btn {
   padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #ff4444, #ff6666);
+  background: #00bf63;
   color: white;
   border: none;
   border-radius: 12px;
@@ -648,13 +652,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(255, 68, 68, 0.3);
+  box-shadow: 0 5px 20px rgba(0, 191, 99, 0.3);
 }
 
 .try-again-btn:hover {
+  background: #00a050;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 68, 68, 0.5);
-  background: linear-gradient(135deg, #ff5555, #ff7777);
+  box-shadow: 0 10px 30px rgba(0, 191, 99, 0.5);
 }
 
 /* Detection Result */
@@ -703,7 +707,7 @@
 }
 
 .confidence-badge {
-  background: linear-gradient(135deg, #00bf63, #00d4ff);
+  background: #00bf63;
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
@@ -716,13 +720,13 @@
 }
 
 .time-badge {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: #00bf63;
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
   font-size: 0.9rem;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 191, 99, 0.4);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -824,7 +828,7 @@
 .detect-another-btn {
   width: 100%;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #00bf63, #00d4ff);
+  background: #00bf63;
   color: white;
   border: none;
   border-radius: 12px;
@@ -833,11 +837,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 191, 99, 0.3);
 }
 
 .detect-another-btn:hover {
+  background: #00a050;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 191, 99, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 191, 99, 0.5);
 }
 
 /* Responsive */
