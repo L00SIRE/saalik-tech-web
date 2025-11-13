@@ -32,74 +32,134 @@ const IdolDetector = () => {
     'krishna': {
       name: 'Lord Krishna',
       sanskritName: 'कृष्ण',
-      description: 'Lord Krishna is the eighth avatar of Vishnu and one of the most widely revered deities in Hinduism. He is known as the divine statesman, the flute-playing cowherd, and the supreme personality of Godhead.',
-      attributes: ['Flute', 'Peacock Feather', 'Cow', 'Butter'],
-      significance: 'Krishna represents divine love, compassion, and the path of devotion (Bhakti Yoga). He is the central figure of the Bhagavad Gita.',
-      temples: ['Krishna Janmashtami Temple (Mathura)', 'ISKCON Temples worldwide'],
-      image: '/idols/krishna.jpg'
+      description: 'Lord Krishna is the eighth avatar of Vishnu and one of the most widely revered deities in Hinduism. He is known as the divine statesman, the flute-playing cowherd, and the supreme personality of Godhead. Born in Mathura to Devaki and Vasudeva, Krishna spent his childhood in Vrindavan as a mischievous cowherd, playing his divine flute and enchanting all living beings. His life is a perfect blend of divine play (leela) and profound philosophy, teaching humanity about dharma, devotion, and the path to liberation through the timeless wisdom of the Bhagavad Gita delivered on the battlefield of Kurukshetra.',
+      attributes: ['Flute', 'Peacock Feather', 'Cow', 'Butter', 'Yellow Garments', 'Blue Complexion', 'Crown with Peacock Feather'],
+      significance: 'Krishna represents divine love, compassion, and the path of devotion (Bhakti Yoga). He is the central figure of the Bhagavad Gita, where he reveals the nature of the self, karma, and the ultimate reality. Krishna embodies perfect balance between worldly duties and spiritual realization, teaching that one can achieve liberation while living in the world through selfless action and devotion.',
+      temples: ['Krishna Janmashtami Temple (Mathura)', 'ISKCON Temples worldwide', 'Dwarkadhish Temple (Dwarka)', 'Banke Bihari Temple (Vrindavan)'],
+      image: '/idols/krishna.jpg',
+      location: 'Mathura, Vrindavan, Dwarka, India',
+      stories: 'Krishna\'s life is filled with divine stories: his birth in prison, childhood miracles in Vrindavan, lifting Govardhan Hill, defeating demons, and his role as charioteer in the Mahabharata war. His Raas Leela with the Gopis symbolizes the eternal dance between the soul and the divine.'
     },
     'shiva': {
       name: 'Lord Shiva',
       sanskritName: 'शिव',
-      description: 'Lord Shiva is one of the principal deities of Hinduism, known as "The Destroyer" in the Trimurti. He is the supreme being who creates, protects, and transforms the universe.',
-      attributes: ['Trident (Trishula)', 'Third Eye', 'Snake', 'Crescent Moon', 'Damaru (Drum)'],
-      significance: 'Shiva represents the cosmic consciousness, meditation, and the destruction of ignorance. He is the patron god of yoga and arts.',
-      temples: ['Pashupatinath Temple (Kathmandu)', 'Kashi Vishwanath Temple (Varanasi)'],
-      image: '/idols/shiva.jpg'
+      description: 'Lord Shiva is one of the principal deities of Hinduism, known as "The Destroyer" in the Trimurti. He is the supreme being who creates, protects, and transforms the universe. Shiva represents the eternal consciousness that transcends all dualities. He is both the ascetic yogi meditating in the Himalayas and the cosmic dancer (Nataraja) who performs the Tandava, the dance of creation and destruction. Shiva is also known as Pashupatinath, the Lord of all creatures, and is revered as the Adi Guru, the first teacher of yoga and meditation.',
+      attributes: ['Trident (Trishula)', 'Third Eye', 'Snake (Vasuki)', 'Crescent Moon', 'Damaru (Drum)', 'Ganga (River)', 'Tiger Skin', 'Rudraksha Beads', 'Bhasma (Sacred Ash)'],
+      significance: 'Shiva represents the cosmic consciousness, meditation, and the destruction of ignorance. He is the patron god of yoga and arts. As the destroyer, Shiva dissolves the universe at the end of each cosmic cycle, making way for new creation. His third eye represents wisdom and the power to destroy ignorance, while his trident symbolizes the three gunas (qualities) of nature. Shiva embodies the perfect balance between asceticism and householder life, showing that spiritual realization can be achieved in any circumstance.',
+      temples: ['Pashupatinath Temple (Kathmandu, Nepal)', 'Kashi Vishwanath Temple (Varanasi)', 'Kedarnath Temple (Uttarakhand)', 'Amarnath Cave (Jammu & Kashmir)', 'Somnath Temple (Gujarat)'],
+      image: '/idols/shiva.jpg',
+      location: 'Mount Kailash, Himalayas, Varanasi, Kathmandu',
+      stories: 'Shiva\'s stories include his marriage to Parvati, drinking the poison Halahala to save the universe, his cosmic dance as Nataraja, and his role as the destroyer of Tripura (three cities of demons). The Pashupatinath Temple in Kathmandu is one of the most sacred Shiva temples, attracting millions of devotees and pilgrims.'
     },
     'ganesh': {
       name: 'Lord Ganesha',
       sanskritName: 'गणेश',
-      description: 'Lord Ganesha is the elephant-headed god of wisdom, success, and good fortune. He is the remover of obstacles and the son of Shiva and Parvati.',
-      attributes: ['Elephant Head', 'Modak (Sweet)', 'Mouse (Vehicle)', 'Broken Tusk'],
-      significance: 'Ganesha is worshipped at the beginning of any new venture or journey. He represents intellect, wisdom, and the ability to overcome obstacles.',
-      temples: ['Siddhivinayak Temple (Mumbai)', 'Ganesh Chaturthi celebrations'],
-      image: '/idols/ganesh.jpg'
+      description: 'Lord Ganesha is the elephant-headed god of wisdom, success, and good fortune. He is the remover of obstacles and the son of Shiva and Parvati. According to legend, Parvati created Ganesha from her body to guard her privacy. When Shiva unknowingly beheaded him, he replaced Ganesha\'s head with that of an elephant, making him unique among all deities. Ganesha is known for his wisdom, which he demonstrated by circumambulating his parents instead of the entire universe, teaching that parents are the entire universe. His broken tusk symbolizes sacrifice and the willingness to break attachments for higher knowledge.',
+      attributes: ['Elephant Head', 'Modak (Sweet)', 'Mouse (Vehicle)', 'Broken Tusk', 'Large Belly', 'Four Arms', 'Trunk', 'Lotus'],
+      significance: 'Ganesha is worshipped at the beginning of any new venture or journey. He represents intellect, wisdom, and the ability to overcome obstacles. His large head symbolizes wisdom, his big ears represent listening, and his small eyes signify concentration. Ganesha teaches that true success comes from removing inner obstacles like ego, greed, and attachment. He is invoked before starting any important work, ceremony, or spiritual practice.',
+      temples: ['Siddhivinayak Temple (Mumbai)', 'Ganesh Chaturthi celebrations', 'Ashtavinayak Temples (Maharashtra)', 'Ganesha Temple (Pillaiyarpatti, Tamil Nadu)'],
+      image: '/idols/ganesh.jpg',
+      location: 'Worshipped across India and Nepal, especially in Maharashtra',
+      stories: 'Ganesha\'s famous stories include his creation by Parvati, the competition with his brother Kartikeya to circle the universe, and his role as the scribe who wrote the Mahabharata as Vyasa dictated. The festival of Ganesh Chaturthi celebrates his birth and is one of India\'s most vibrant celebrations.'
     },
     'durga': {
       name: 'Goddess Durga',
       sanskritName: 'दुर्गा',
-      description: 'Goddess Durga is the warrior goddess who combats evil forces and protects the universe. She is the divine mother and the embodiment of feminine power (Shakti).',
-      attributes: ['Multiple Arms', 'Lion (Vehicle)', 'Weapons', 'Trident', 'Lotus'],
-      significance: 'Durga represents the victory of good over evil, divine feminine power, and protection. She is worshipped during Navratri.',
-      temples: ['Durga Temple (Varanasi)', 'Kalighat Temple (Kolkata)'],
-      image: '/idols/durga.jpg'
+      description: 'Goddess Durga is the warrior goddess who combats evil forces and protects the universe. She is the divine mother and the embodiment of feminine power (Shakti). Created by the combined energies of all gods to defeat the demon Mahishasura, Durga represents the invincible power of the divine feminine. Riding a lion, she wields multiple weapons in her many arms, symbolizing her ability to protect devotees from all directions. Durga means "the invincible" and she is worshipped as the mother who protects her children from all forms of suffering and evil.',
+      attributes: ['Multiple Arms (8 or 10)', 'Lion (Vehicle)', 'Weapons (Trident, Sword, Discus, Conch)', 'Trident', 'Lotus', 'Demon Under Feet', 'Third Eye', 'Crown'],
+      significance: 'Durga represents the victory of good over evil, divine feminine power, and protection. She is worshipped during Navratri, a nine-night festival celebrating her various forms. Durga embodies shakti (divine energy) and teaches that inner strength and courage can overcome any obstacle. She is both fierce in battle and compassionate as a mother, showing that true power includes both protection and love.',
+      temples: ['Durga Temple (Varanasi)', 'Kalighat Temple (Kolkata)', 'Kamakhya Temple (Assam)', 'Vaishno Devi Temple (Jammu)', 'Dakshineswar Kali Temple (Kolkata)'],
+      image: '/idols/durga.jpg',
+      location: 'Worshipped across India, especially in West Bengal, Assam, and Varanasi',
+      stories: 'Durga\'s most famous story is her battle with Mahishasura, the buffalo demon who could not be defeated by any male god. She fought for nine days and nights, finally slaying him on the tenth day (Vijayadashami). During Navratri, her nine forms (Navadurga) are worshipped, each representing different aspects of divine feminine power.'
     },
     'vishnu': {
       name: 'Lord Vishnu',
       sanskritName: 'विष्णु',
-      description: 'Lord Vishnu is the preserver and protector of the universe in the Hindu Trimurti. He maintains cosmic order and takes various avatars to restore dharma.',
-      attributes: ['Conch Shell', 'Discus (Sudarshana Chakra)', 'Lotus', 'Mace', 'Garuda (Vehicle)'],
-      significance: 'Vishnu represents preservation, protection, and the maintenance of cosmic order. He is known for his ten avatars including Rama and Krishna.',
-      temples: ['Badrinath Temple', 'Tirupati Balaji Temple'],
-      image: '/idols/vishnu.jpg'
+      description: 'Lord Vishnu is the preserver and protector of the universe in the Hindu Trimurti. He maintains cosmic order (dharma) and takes various avatars to restore balance whenever evil threatens the world. Vishnu is often depicted reclining on the cosmic serpent Shesha in the ocean of milk, with his consort Lakshmi massaging his feet. He represents the sustaining force of the universe, ensuring that creation continues in harmony. Vishnu\'s ten avatars (Dashavatara) represent the evolution of consciousness and his interventions at critical moments in cosmic history.',
+      attributes: ['Conch Shell (Shankha)', 'Discus (Sudarshana Chakra)', 'Lotus (Padma)', 'Mace (Gada)', 'Garuda (Vehicle)', 'Blue Complexion', 'Crown', 'Four Arms', 'Yellow Garments'],
+      significance: 'Vishnu represents preservation, protection, and the maintenance of cosmic order. He is known for his ten avatars including Rama, Krishna, and Buddha. Vishnu teaches that the divine actively participates in the world to protect dharma and guide souls toward liberation. His presence in the world through avatars shows that the divine is always accessible to devotees, appearing in forms they can relate to and worship.',
+      temples: ['Badrinath Temple (Uttarakhand)', 'Tirupati Balaji Temple (Andhra Pradesh)', 'Ranganatha Swamy Temple (Tamil Nadu)', 'Jagannath Temple (Puri, Odisha)', 'Venkateswara Temple (Tirumala)'],
+      image: '/idols/vishnu.jpg',
+      location: 'Worshipped across India, especially in South India and Vaishnavite temples',
+      stories: 'Vishnu\'s ten avatars include Matsya (fish), Kurma (tortoise), Varaha (boar), Narasimha (man-lion), Vamana (dwarf), Parashurama, Rama, Krishna, Buddha, and Kalki (future avatar). Each avatar appears when dharma is threatened, restoring cosmic balance. The stories of Rama and Krishna are among the most beloved in Hindu tradition.'
     },
     'lakshmi': {
       name: 'Goddess Lakshmi',
       sanskritName: 'लक्ष्मी',
-      description: 'Goddess Lakshmi is the goddess of wealth, fortune, power, beauty, and prosperity. She is the consort of Lord Vishnu and the embodiment of abundance.',
-      attributes: ['Lotus', 'Gold Coins', 'Elephants', 'Owl (Vehicle)', 'Four Arms'],
-      significance: 'Lakshmi represents material and spiritual wealth, prosperity, and good fortune. She is worshipped during Diwali and other festivals.',
-      temples: ['Mahalakshmi Temple (Mumbai)', 'Lakshmi Narayan Temple'],
-      image: '/idols/lakshmi.jpg'
+      description: 'Goddess Lakshmi is the goddess of wealth, fortune, power, beauty, and prosperity. She is the consort of Lord Vishnu and the embodiment of abundance in all forms - material, spiritual, and emotional. Lakshmi emerged from the churning of the cosmic ocean (Samudra Manthan) and chose Vishnu as her eternal consort. She is often depicted seated on a lotus, symbolizing purity and spiritual wealth that transcends material attachments. Lakshmi has eight forms (Ashtalakshmi) representing different types of prosperity including wealth, knowledge, courage, and victory.',
+      attributes: ['Lotus', 'Gold Coins', 'Elephants (Gajalakshmi)', 'Owl (Vehicle)', 'Four Arms', 'Golden Complexion', 'Red Garments', 'Gold Ornaments', 'Abhaya Mudra (Gesture of Protection)'],
+      significance: 'Lakshmi represents material and spiritual wealth, prosperity, and good fortune. She is worshipped during Diwali and other festivals. Lakshmi teaches that true prosperity comes from inner abundance, generosity, and gratitude. She bestows wealth on those who work with integrity, share their abundance, and maintain dharma. Her presence in a home is believed to bring harmony, prosperity, and spiritual growth.',
+      temples: ['Mahalakshmi Temple (Mumbai)', 'Lakshmi Narayan Temple (Delhi)', 'Ashtalakshmi Temple (Chennai)', 'Kolhapur Mahalakshmi Temple (Maharashtra)'],
+      image: '/idols/lakshmi.jpg',
+      location: 'Worshipped across India, especially during Diwali and festivals',
+      stories: 'Lakshmi\'s stories include her emergence from the cosmic ocean, her marriage to Vishnu, and her role in bringing prosperity to devotees. During Diwali, she is believed to visit homes that are clean, well-lit, and filled with positive energy. The story of her choosing Vishnu over other gods demonstrates that true wealth comes from choosing the path of dharma.'
     },
     'hanuman': {
       name: 'Lord Hanuman',
       sanskritName: 'हनुमान',
-      description: 'Lord Hanuman is the monkey god known for his unwavering devotion to Lord Rama. He is the symbol of strength, courage, and selfless service.',
-      attributes: ['Mace (Gada)', 'Monkey Form', 'Flying Ability', 'Rama\'s Name'],
-      significance: 'Hanuman represents devotion, strength, and loyalty. He is worshipped for protection, courage, and overcoming challenges.',
-      temples: ['Hanuman Dhoka (Kathmandu)', 'Sankat Mochan Temple'],
-      image: '/idols/hanuman.jpg'
+      description: 'Lord Hanuman is the monkey god known for his unwavering devotion to Lord Rama. He is the symbol of strength, courage, and selfless service. Born to Anjana and Kesari, Hanuman is considered an incarnation of Lord Shiva. His devotion to Rama is legendary - he crossed the ocean to Lanka, found Sita, and played a crucial role in Rama\'s victory over Ravana. Hanuman represents the perfect devotee, showing that through pure devotion and selfless service, one can achieve the highest spiritual realization. His strength comes from his celibacy, discipline, and complete surrender to the divine.',
+      attributes: ['Mace (Gada)', 'Monkey Form', 'Flying Ability', 'Rama\'s Name on Chest', 'Red Complexion', 'Tail', 'Rudraksha Beads', 'Orange Garments'],
+      significance: 'Hanuman represents devotion, strength, and loyalty. He is worshipped for protection, courage, and overcoming challenges. Hanuman teaches that physical strength combined with spiritual devotion creates invincible power. His unwavering faith in Rama shows that true devotion can move mountains (literally, as he carried a mountain with healing herbs). Hanuman is especially revered by wrestlers, athletes, and those seeking physical and mental strength.',
+      temples: ['Hanuman Dhoka (Kathmandu, Nepal)', 'Sankat Mochan Temple (Varanasi)', 'Hanuman Mandir (Delhi)', 'Mehendipur Balaji Temple (Rajasthan)', 'Hampi Anjaneya Temple (Karnataka)'],
+      image: '/idols/hanuman.jpg',
+      location: 'Worshipped across India and Nepal, especially in North India',
+      stories: 'Hanuman\'s famous stories include his childhood attempt to swallow the sun, his leap across the ocean to Lanka, his meeting with Sita, burning Lanka with his tail, and carrying the mountain with healing herbs. The Hanuman Chalisa, a 40-verse prayer, is one of the most recited texts in Hinduism, believed to bring protection and remove obstacles.'
     },
     'saraswati': {
       name: 'Goddess Saraswati',
       sanskritName: 'सरस्वती',
-      description: 'Goddess Saraswati is the goddess of knowledge, music, art, wisdom, and learning. She is the consort of Lord Brahma and the patron of arts and sciences.',
-      attributes: ['Veena (Musical Instrument)', 'Book', 'Swan (Vehicle)', 'Lotus', 'White Sari'],
-      significance: 'Saraswati represents knowledge, creativity, and wisdom. She is worshipped by students, artists, and scholars.',
-      temples: ['Saraswati Temples across India', 'Basanta Panchami celebrations'],
-      image: '/idols/saraswati.jpg'
+      description: 'Goddess Saraswati is the goddess of knowledge, music, art, wisdom, and learning. She is the consort of Lord Brahma and the patron of arts and sciences. Saraswati represents the flow of wisdom and consciousness. She is often depicted seated on a white lotus, playing the veena (a stringed instrument), with a swan as her vehicle. The swan symbolizes the ability to discriminate between good and evil, while the lotus represents purity and transcendence. Saraswati is the source of all creative and intellectual pursuits, inspiring artists, musicians, writers, and students.',
+      attributes: ['Veena (Musical Instrument)', 'Book (Vedas)', 'Swan (Vehicle)', 'Lotus', 'White Sari', 'White Complexion', 'Four Arms', 'Rosary (Mala)', 'Water Pot (Kamandalu)'],
+      significance: 'Saraswati represents knowledge, creativity, and wisdom. She is worshipped by students, artists, and scholars. Saraswati teaches that true knowledge leads to liberation and that learning should be pursued for its own sake, not just for material gain. She embodies the idea that knowledge is the greatest wealth and that wisdom comes from both study and experience. Her presence brings clarity of thought, creativity, and the ability to express oneself beautifully.',
+      temples: ['Saraswati Temples across India', 'Basanta Panchami celebrations', 'Dakshineswar Temple (Kolkata)', 'Saraswati Temple (Pushkar)'],
+      image: '/idols/saraswati.jpg',
+      location: 'Worshipped across India, especially during Basanta Panchami and educational institutions',
+      stories: 'Saraswati is believed to have created Sanskrit, the language of the gods. She is associated with the river Saraswati, which is said to flow underground. During Basanta Panchami (spring festival), students worship her before beginning their studies. The story of her creation by Brahma shows that knowledge is the foundation of creation itself.'
+    },
+    'kaalbhairab': {
+      name: 'Kaal Bhairav',
+      sanskritName: 'काल भैरव',
+      description: 'Kaal Bhairav is a fierce form of Lord Shiva, known as the guardian of justice and the protector of Kathmandu. Carved from a single block of black stone, this ancient statue stands nearly 12 feet high in Kathmandu Durbar Square. Dating back to the 5th-6th century CE (Licchavi period), Kaal Bhairav is unique among all Bhairavs in the Hindu-Buddhist world because he smiles - a mysterious grin that legend attributes to a clever woman\'s wit. "Kaal" means time or death, and "Bhairav" means fearsome, together symbolizing the force that devours time and destroys illusion. The statue served as Nepal\'s divine court of justice for centuries, where oaths and confessions took place, and lying was believed to cause instant death.',
+      attributes: ['Six Arms', 'Skull Garland', 'Trampling Corpse', 'Serpent Ornaments', 'Blood-Red Eyes', 'Smiling Face', 'Black Stone', 'Trident', 'Damaru (Drum)', 'Sword'],
+      significance: 'Kaal Bhairav represents divine justice, protection, and the destruction of ignorance. He is the guardian of Kathmandu and serves as both protector and judge. The statue bridges Hindu and Buddhist traditions - Hindus revere him as the city\'s guardian, while Newar Buddhists honor him as a Dharmapala (protector of Dharma). His smile symbolizes divine humor and acceptance of human complexity, teaching that even cosmic judgment can appreciate human intelligence and wit.',
+      temples: ['Kaal Bhairav Shrine (Kathmandu Durbar Square, Nepal)', 'Hanuman Dhoka Palace Complex'],
+      image: '/idols/kaalbhairab.jpg',
+      location: 'Kathmandu Durbar Square, Hanuman Dhoka Palace, Kathmandu, Nepal',
+      stories: 'The legend tells of a wife accused of adultery who was ordered to swear before Kaal Bhairav. Before the ritual, she visited her mother and asked to be breastfed once more. When she stood before the deity, she swore, "I have done nothing immoral since drinking my mother\'s milk" - technically true. Realizing her cleverness, Bhairav smiled in divine amusement, and the statue has been known for its eternal grin ever since. During Indra Jatra festival, thousands gather before him, and the hidden Swet Bhairav (White Bhairav) is revealed once a year.'
+    },
+    'kali': {
+      name: 'Birupakshya (Self-Emerging Kali)',
+      sanskritName: 'विरूपाक्ष',
+      description: 'Birupakshya, also known as Kirateswor Mahadev or Virupaksha, is the self-emerging statue located in the sacred grounds of Pashupatinath Temple in Kathmandu, Nepal. This ancient statue, dating back to the 1st century BCE from the Kirat dynasty, represents one of archaeology\'s most compelling mysteries. Currently, only half of the statue is visible above ground, with the other half remaining buried beneath the earth. The visible portion displays remarkable craftsmanship with Kirat-type facial features, distinctive nose and eyes, ornate earrings, beautifully curled hair, thick lips, sharp body texture, and most significantly, three eyes similar to Lord Shiva. Birupakshya means "the one with distorted eyes" or "odd-eyed" and represents one of the eleven Rudras, embodying Shiva\'s fierce aspect.',
+      attributes: ['Three Eyes', 'Kirat Facial Features', 'Ornate Earrings', 'Curled Hair', 'Thick Lips', 'Partially Buried', 'Stone Carving', 'Ancient Kirat Style'],
+      significance: 'The Birupakshya statue holds unique significance in both Hindu and Buddhist traditions. For Hindu devotees, it represents Kirateswor Mahadev, a fierce form of Shiva particularly revered by the Kirat communities. For Buddhist practitioners, the statue connects to the legend of Buddha\'s intervention in Virupaksha\'s spiritual journey. The gradual emergence of the statue symbolizes eternal spiritual transformation and cosmic renewal, representing the eternal cycle of time and the interconnectedness of creation and destruction. The phenomenon serves as a powerful reminder of Nepal\'s profound spiritual heritage and the timeless human quest for understanding divine mysteries.',
+      temples: ['Pashupatinath Temple Complex (Kathmandu, Nepal)'],
+      image: '/idols/kali.jpg',
+      location: 'Pashupatinath Temple, Kathmandu, Nepal (UNESCO World Heritage Site)',
+      stories: 'According to legend, Virupaksha was a child from a poor family who searched for his missing father. After years of searching, he unknowingly encountered his mother in a cave, leading to a relationship that marked the beginning of Kali Yuga. Overwhelmed by guilt, Virupaksha visited Pashupatinath where he encountered Lord Shiva preparing an intoxicating substance. When Shiva instructed him to open a hot vessel, Virupaksha\'s face was burned, turning black and earning him the name Kurup. Seeking solace with Buddha, he received a garland and was instructed to chant until it withered. When locals discovered him meditating with Buddha\'s garland on Pashupati\'s sacred grounds, they buried him due to his previous conflict with Shiva. According to tradition, Virupaksha will seek vengeance upon humanity when eventually freed from the ground. The statue\'s gradual emergence continues to fascinate pilgrims and scholars alike.'
+    },
+    'bhairab': {
+      name: 'Kaal Bhairav',
+      sanskritName: 'काल भैरव',
+      description: 'Kaal Bhairav is a fierce form of Lord Shiva, known as the guardian of justice and the protector of Kathmandu. Carved from a single block of black stone, this ancient statue stands nearly 12 feet high in Kathmandu Durbar Square. Dating back to the 5th-6th century CE (Licchavi period), Kaal Bhairav is unique among all Bhairavs in the Hindu-Buddhist world because he smiles - a mysterious grin that legend attributes to a clever woman\'s wit. "Kaal" means time or death, and "Bhairav" means fearsome, together symbolizing the force that devours time and destroys illusion. The statue served as Nepal\'s divine court of justice for centuries, where oaths and confessions took place, and lying was believed to cause instant death.',
+      attributes: ['Six Arms', 'Skull Garland', 'Trampling Corpse', 'Serpent Ornaments', 'Blood-Red Eyes', 'Smiling Face', 'Black Stone', 'Trident', 'Damaru (Drum)', 'Sword'],
+      significance: 'Kaal Bhairav represents divine justice, protection, and the destruction of ignorance. He is the guardian of Kathmandu and serves as both protector and judge. The statue bridges Hindu and Buddhist traditions - Hindus revere him as the city\'s guardian, while Newar Buddhists honor him as a Dharmapala (protector of Dharma). His smile symbolizes divine humor and acceptance of human complexity, teaching that even cosmic judgment can appreciate human intelligence and wit.',
+      temples: ['Kaal Bhairav Shrine (Kathmandu Durbar Square, Nepal)', 'Hanuman Dhoka Palace Complex'],
+      image: '/idols/kaalbhairab.jpg',
+      location: 'Kathmandu Durbar Square, Hanuman Dhoka Palace, Kathmandu, Nepal',
+      stories: 'The legend tells of a wife accused of adultery who was ordered to swear before Kaal Bhairav. Before the ritual, she visited her mother and asked to be breastfed once more. When she stood before the deity, she swore, "I have done nothing immoral since drinking my mother\'s milk" - technically true. Realizing her cleverness, Bhairav smiled in divine amusement, and the statue has been known for its eternal grin ever since. During Indra Jatra festival, thousands gather before him, and the hidden Swet Bhairav (White Bhairav) is revealed once a year.'
+    },
+    'birupakshya': {
+      name: 'Birupakshya (Self-Emerging Kali)',
+      sanskritName: 'विरूपाक्ष',
+      description: 'Birupakshya, also known as Kirateswor Mahadev or Virupaksha, is the self-emerging statue located in the sacred grounds of Pashupatinath Temple in Kathmandu, Nepal. This ancient statue, dating back to the 1st century BCE from the Kirat dynasty, represents one of archaeology\'s most compelling mysteries. Currently, only half of the statue is visible above ground, with the other half remaining buried beneath the earth. The visible portion displays remarkable craftsmanship with Kirat-type facial features, distinctive nose and eyes, ornate earrings, beautifully curled hair, thick lips, sharp body texture, and most significantly, three eyes similar to Lord Shiva. Birupakshya means "the one with distorted eyes" or "odd-eyed" and represents one of the eleven Rudras, embodying Shiva\'s fierce aspect.',
+      attributes: ['Three Eyes', 'Kirat Facial Features', 'Ornate Earrings', 'Curled Hair', 'Thick Lips', 'Partially Buried', 'Stone Carving', 'Ancient Kirat Style'],
+      significance: 'The Birupakshya statue holds unique significance in both Hindu and Buddhist traditions. For Hindu devotees, it represents Kirateswor Mahadev, a fierce form of Shiva particularly revered by the Kirat communities. For Buddhist practitioners, the statue connects to the legend of Buddha\'s intervention in Virupaksha\'s spiritual journey. The gradual emergence of the statue symbolizes eternal spiritual transformation and cosmic renewal, representing the eternal cycle of time and the interconnectedness of creation and destruction. The phenomenon serves as a powerful reminder of Nepal\'s profound spiritual heritage and the timeless human quest for understanding divine mysteries.',
+      temples: ['Pashupatinath Temple Complex (Kathmandu, Nepal)'],
+      image: '/idols/kali.jpg',
+      location: 'Pashupatinath Temple, Kathmandu, Nepal (UNESCO World Heritage Site)',
+      stories: 'According to legend, Virupaksha was a child from a poor family who searched for his missing father. After years of searching, he unknowingly encountered his mother in a cave, leading to a relationship that marked the beginning of Kali Yuga. Overwhelmed by guilt, Virupaksha visited Pashupatinath where he encountered Lord Shiva preparing an intoxicating substance. When Shiva instructed him to open a hot vessel, Virupaksha\'s face was burned, turning black and earning him the name Kurup. Seeking solace with Buddha, he received a garland and was instructed to chant until it withered. When locals discovered him meditating with Buddha\'s garland on Pashupati\'s sacred grounds, they buried him due to his previous conflict with Shiva. According to tradition, Virupaksha will seek vengeance upon humanity when eventually freed from the ground. The statue\'s gradual emergence continues to fascinate pilgrims and scholars alike.'
     }
   };
 
@@ -511,13 +571,10 @@ const IdolDetector = () => {
               </div>
               <h2>Detection Failed</h2>
               <p className="error-message">
-                Couldn't detect the idol. Please upload the statue of a god.
+                Couldn't detect the idol. We have not updated this idol in our database yet, or the idol image is not too clear.
               </p>
               <p className="error-hint">
-                Make sure the image filename contains the name of a Hindu deity (case-insensitive).<br/>
-                Examples: krishna.jpg, Shiva.png, GANESH.jpg, durga-idol.png<br/>
-                <br/>
-                <strong>Available deities:</strong> Krishna, Shiva, Ganesh, Durga, Vishnu, Lakshmi, Hanuman, Saraswati
+                Please try uploading a clearer image or check back later as we continue to expand our database.
               </p>
               <button onClick={resetDetection} className="try-again-btn">
                 Try Again
@@ -582,6 +639,20 @@ const IdolDetector = () => {
                       ))}
                     </ul>
                   </div>
+
+                  {detectedIdol.location && (
+                    <div className="detail-section">
+                      <h3>Location</h3>
+                      <p>{detectedIdol.location}</p>
+                    </div>
+                  )}
+
+                  {detectedIdol.stories && (
+                    <div className="detail-section">
+                      <h3>Stories & Legends</h3>
+                      <p>{detectedIdol.stories}</p>
+                    </div>
+                  )}
                 </div>
               </div>
 
